@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjectWebApplication.Controllers
+namespace ProjectWebApplication.Areas.Configurations.Controllers
 {
     public class PositionsController : Controller
     {
-        // GET: Positions
+        // GET: Configurations/Positions
         public ActionResult Index()
         {
             return View();

@@ -24,13 +24,13 @@ namespace ProjectWebApplication
                       "~/Scripts/respond.js",
                       "~/Scripts/angular.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                      "~/Scripts/appCode/app.js"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/configuration")
+                .IncludeDirectory("~/Scripts/appCode/Configuration/Controllers", "*.js" )
+                .Include("~/Scripts/appCode/Configuration/app.js"));
         }
     }
 }

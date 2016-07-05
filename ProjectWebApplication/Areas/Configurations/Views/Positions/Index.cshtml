@@ -6,8 +6,8 @@
 <h2>Index</h2>
 <div ng-controller="positionsController as positions">
     <form ng-submit="addPosition()">
-        <input type="text" ng-model="NewPosition.Name" placeholder="Nombre"/>
-        <input type="text" ng-model="NewPosition.Description" placeholder="Description" />
+        <input type="text" ng-model="NewPosition.Name" placeholder="Nombre" />
+        <input type="text" ng-model="NewPosition.Description" placeholder="Descripción" />
         <input type="submit" class="btn btn-primary" value="Guardar" />
     </form>
     <table class="table table-striped">
@@ -16,6 +16,7 @@
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -23,13 +24,8 @@
                 <td>{{item.Id}}</td>
                 <td>{{item.Name}}</td>
                 <td>{{item.Description}}</td>
+                <td><a  href="#" class="btn btn-danger" ng-click="removePosition(item)">X</a></td>
             </tr>
-        </tbody>      
+        </tbody>
     </table>
-
 </div>
-@section scripts
-{
-    <script src="@Url.Content("~/Scripts/appCode/positions.js")"></script>
-}
-
