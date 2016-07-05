@@ -4,8 +4,19 @@
 }
 
 <h2>Index</h2>
-<div ng-controller="positionsController">
-
+<div ng-controller="positionsController as positions">
+    <form ng-submit="addPosition()">
+        <input type="text" ng-model="NewPosition.Name" placeholder="Nombre"/>
+        <input type="text" ng-model="NewPosition.Description" placeholder="Description" />
+        <input type="submit" class="btn btn-primary" value="Guardar" />
+    </form>
+    <ul>
+        <li ng-repeat="item in positions.items">
+            <span>{{item.id}}</span>
+            <span>{{item.name}}</span>
+            <span>{{item.description}}</span>
+        </li>
+    </ul>
 
 </div>
 @section scripts
