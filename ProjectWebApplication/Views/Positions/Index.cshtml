@@ -10,13 +10,22 @@
         <input type="text" ng-model="NewPosition.Description" placeholder="Description" />
         <input type="submit" class="btn btn-primary" value="Guardar" />
     </form>
-    <ul>
-        <li ng-repeat="item in positions.items">
-            <span>{{item.id}}</span>
-            <span>{{item.name}}</span>
-            <span>{{item.description}}</span>
-        </li>
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Description}}</td>
+            </tr>
+        </tbody>      
+    </table>
 
 </div>
 @section scripts
