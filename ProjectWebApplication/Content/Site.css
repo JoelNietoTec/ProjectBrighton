@@ -24,7 +24,41 @@ textarea {
     max-width: 280px;
 }
 
-
 .config-container {
     margin-top: 20px;
+}
+
+.tab-content > .active {
+   /*border: 1px solid #D4D4D5;*/
+    padding: 15px;
+}
+
+.sections {
+    border-bottom: 1px solid #D4D4D5;
+}
+
+.nav-pills > li > a {
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus {
+    border-radius: 0px;
+    text-transform: uppercase;
+    background-color: #FFF;
+    color: #337ab7;
+    font-weight: bolder;
+    border-bottom: 3px solid
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    background-color: #FFF;
+}
+
+.btn {
+    border-radius: 0px;
+    border-color: #D4D4D5;
 }
