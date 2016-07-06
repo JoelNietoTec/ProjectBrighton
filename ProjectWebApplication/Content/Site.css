@@ -62,3 +62,7 @@ textarea {
     border-radius: 0px;
     border-color: #D4D4D5;
 }
+
+a:focus {
+    outline: 0;
+}
