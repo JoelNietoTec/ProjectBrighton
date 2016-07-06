@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Configuracions - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -19,14 +24,24 @@
                 @Html.ActionLink("Project Brighton", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
 
-    <div class="container body-content" ng-app="mainApp">
-        @RenderBody()
+    <div class="container body-content config-container" ng-app="mainApp">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="active" role="presentation"><a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">Cargos</a></li>
+            <li role="presentation"><a href="#industries" aria-controls="industries" role="tab" data-toggle="tab">Industrias</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="positions">
+                @Html.Partial("~/Areas/Configurations/Views/Positions/Index.cshtml")
+            </div>
+            <div role="tabpanel" class="tab-pane" id="industries">
+                @Html.Partial("~/Areas/Configurations/Views/Industries/Index.cshtml")
+            </div>
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -36,6 +51,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/configuration")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

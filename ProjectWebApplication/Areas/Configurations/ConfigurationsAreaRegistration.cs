@@ -17,7 +17,7 @@ namespace ProjectWebApplication.Areas.Configurations
             context.MapRoute(
                 "Configurations_default",
                 "Configurations/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { area = "Configurations", controller = "Start",  action = "Index", id = UrlParameter.Optional }
             );
         }
     }

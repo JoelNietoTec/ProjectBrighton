@@ -23,7 +23,13 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Config", "Index", "Start", new { Area = "Configurations"}, new { })
+                    </li>
+                </ul>
             </div>
+            
         </div>
     </div>
     <div class="container body-content" ng-app="mainApp">
