@@ -13,13 +13,13 @@
             .error(function (err) {
                 console.log(err.description);
             });
-    }
+    };
 
     $scope.addIndustry = function () {
         var industry = {
             Name: $scope.NewIndustry.Name,
             Description: $scope.NewIndustry.Description
-        }
+        };
         console.log(industry);
         $http.post(
             "http://localhost:24616/api/Industries",
@@ -36,8 +36,8 @@
         })
         .error(function (data, status, headers, config) {
             console.log(error);
-        })
-    }
+        });
+    };
 
     $scope.removeIndustry = function (item) {
         $http.delete("http://localhost:24616/api/Industries/" + item.Id)
@@ -49,9 +49,9 @@
             .error(function (error) {
                 console.log(error);
             });
-    }
+    };
 
     $scope.getIndustries();
-}
+};
 
 industriesController.$inject = ['$scope', '$http'];

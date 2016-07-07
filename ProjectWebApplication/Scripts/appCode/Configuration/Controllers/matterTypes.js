@@ -1,11 +1,11 @@
-﻿var positionsController = function ($scope, $http) {
+﻿var matterTypesController = function ($scope, $http) {
 
-    $scope.NewPosition = {};
+    $scope.NewMatterType = {};
 
-    $scope.getPositions = function () {
+    $scope.getMatterTypes = function () {
         $scope.items = [];
 
-        $http.get("http://localhost:24616/api/Positions")
+        $http.get("http://localhost:24616/api/MatterTypes")
             .success(function (data) {
                 console.log(data);
                 $scope.items = data;
@@ -15,22 +15,21 @@
             });
     };
 
-    $scope.addPosition = function () {
-        var position = {
-            Name: $scope.NewPosition.Name,
-            Description: $scope.NewPosition.Description
+    $scope.addMatterType = function () {
+        var matterType = {
+            Name: $scope.NewMatterType.Name
         };
-        console.log(position);
+        console.log(matterType);
         $http.post(
-            "http://localhost:24616/api/Positions",
-            JSON.stringify(position),
+            "http://localhost:24616/api/MatterTypes",
+            JSON.stringify(matterType),
             {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
         .success(function (data, status, headers, config) {
-            $scope.NewPosition = {};
+            $scope.NewMatterType = {};
             $scope.items.push(data);
             console.log(data);
         })
@@ -39,11 +38,11 @@
         });
     };
 
-    $scope.removePosition = function (item) {
-        $http.delete("http://localhost:24616/api/Positions/" + item.Id)
+    $scope.removeMatterType = function (item) {
+        $http.delete("http://localhost:24616/api/MatterTypes/" + item.Id)
             .success(function (data) {
-                $scope.items = $scope.items.filter(function (position) {
-                    return position !== item;
+                $scope.items = $scope.items.filter(function (matterType) {
+                    return matterType !== item;
                 });
             })
             .error(function (error) {
@@ -51,7 +50,7 @@
             });
     };
 
-    $scope.getPositions();
+    $scope.getMatterTypes();
 };
 
-positionsController.$inject = ['$scope', '$http'];
+matterTypesController.$inject = ['$scope', '$http'];

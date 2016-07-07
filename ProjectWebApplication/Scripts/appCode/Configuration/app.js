@@ -3,3 +3,5 @@
 mainApp.controller('positionsController', positionsController);
 
 mainApp.controller('industriesController', industriesController);
+
+mainApp.controller('matterTypesController', matterTypesController);

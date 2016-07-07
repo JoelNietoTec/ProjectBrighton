@@ -38,14 +38,14 @@ textarea {
 }
 
 .nav-pills > li > a {
-    border-radius: 0px;
+    border-radius: 0;
     text-transform: uppercase;
 }
 
 .nav-pills > li.active > a, 
 .nav-pills > li.active > a:hover, 
 .nav-pills > li.active > a:focus {
-    border-radius: 0px;
+    border-radius: 0;
     text-transform: uppercase;
     background-color: #FFF;
     color: #337ab7;
@@ -59,7 +59,7 @@ textarea {
 }
 
 .btn {
-    border-radius: 0px;
+    border-radius: 0;
     border-color: #D4D4D5;
 }
 

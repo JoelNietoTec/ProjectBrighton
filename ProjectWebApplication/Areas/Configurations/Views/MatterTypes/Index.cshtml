@@ -1,0 +1,24 @@
+﻿<h3 class="win-h3">Tipos de Asunto</h3>
+<div ng-controller="matterTypesController as matterTypes">
+    <form ng-submit="addMatterType()">
+        <input type="text" class="win-textbox" ng-model="NewMatterType.Name" placeholder="Nombre" />
+        <input type="submit" class="win-button win-button-primary" value="Guardar" />
+    </form>
+    <table class="table table-striped" ng-hide="items.length < 0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>               
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td><a href="#" class="btn btn-sm btn-danger" ng-click="removeMatterType(item)">X</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

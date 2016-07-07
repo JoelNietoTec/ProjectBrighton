@@ -33,6 +33,7 @@
         <ul class="nav nav-pills sections" role="tablist">
             <li class="active" role="presentation"><a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">Cargos</a></li>
             <li role="presentation"><a href="#industries" aria-controls="industries" role="tab" data-toggle="tab">Industrias</a></li>
+            <li role="presentation"><a href="#matterTypes" aria-controls="matterTypes" role="tab" data-toggle="tab">Tipos de Asunto</a></li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="positions">
@@ -40,6 +41,9 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="industries">
                 @Html.Partial("~/Areas/Configurations/Views/Industries/Index.cshtml")
+            </div>
+            <div role="tabpanel" class="tab-pane" id="matterTypes">
+                @Html.Partial("~/Areas/Configurations/Views/MatterTypes/Index.cshtml")
             </div>
         </div>
         <hr />
