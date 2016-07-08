@@ -38,8 +38,13 @@ textarea {
 }
 
 .nav-pills > li > a {
+    font-family: "Segoe","Segoe UI Emoji", Helvetica,Arial,sans-serif;
     border-radius: 0;
     text-transform: uppercase;
+    color: #495361;
+    font-weight: 700;
+    opacity: .8;
+    font-size: 13px;
 }
 
 .nav-pills > li.active > a, 
@@ -48,9 +53,9 @@ textarea {
     border-radius: 0;
     text-transform: uppercase;
     background-color: #FFF;
-    color: #337ab7;
-    font-weight: bolder;
-    border-bottom: 3px solid
+    color: #495361;
+    border-bottom: 5px solid #337ab7;
+    opacity: 1;
 }
 
 .nav > li > a:hover,

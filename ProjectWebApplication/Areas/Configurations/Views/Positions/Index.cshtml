@@ -2,7 +2,9 @@
 <div ng-controller="positionsController as positions">
     <form ng-submit="addPosition()">
         <input type="text" class="win-textbox" ng-model="NewPosition.Name" placeholder="Nombre" />
-        <input type="text" class="win-textbox" ng-model="NewPosition.Description" placeholder="Descripción" />
+        <br />
+        <textarea class="win-textbox" ng-model="NewPosition.Description" placeholder="Descripción" cols="4"></textarea>
+        <br />
         <input type="submit" class="win-button win-button-primary" value="Guardar" />
     </form>
     <table class="table table-striped" ng-hide="items.length < 0">
@@ -10,7 +12,7 @@
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Descripción</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
