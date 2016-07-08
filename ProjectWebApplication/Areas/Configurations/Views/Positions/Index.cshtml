@@ -25,4 +25,28 @@
             </tr>
         </tbody>
     </table>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editModal">
+        Launch demo modal
+    </button>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editLabel">
+        <div class="modal-dialog" role="form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title win-h4" id="editLabel">Editar Posición</h4>
+                </div>
+                <div class="modal-body">
+                    <form ng-submit="editPosition()">
+                        <input type="text" class="win-textbox" ng-model="CurrentPosition.Name" placeholder="Nombre" />
+                        <br />
+                        <input type="text" class="win-textbox" ng-model="CurrentPosition.Description" placeholder="Descripción" />
+                        <br />
+                        <input type="submit" class="win-button win-button-primary" value="Guardar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
