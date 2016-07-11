@@ -71,3 +71,7 @@ textarea {
 a:focus {
     outline: 0;
 }
+
+.modal-content {
+    border-radius: 0;
+}

@@ -39,6 +39,11 @@
         });
     };
 
+    $scope.editPosition = function (item) {
+        $scope.currentItem = item;
+        console.log(item);
+    };
+
     $scope.removePosition = function (item) {
         $http.delete("http://localhost:24616/api/Positions/" + item.Id)
             .success(function (data) {

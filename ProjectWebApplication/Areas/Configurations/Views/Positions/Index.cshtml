@@ -14,6 +14,7 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Eliminar</th>
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                 <td>{{item.Name}}</td>
                 <td>{{item.Description}}</td>
                 <td><a href="#" class="btn btn-sm btn-danger" ng-click="removePosition(item)">X</a></td>
+                <td><a href="#" class="btn btn-sm btn-primary" ng-click="editPosition(item)" data-toggle="modal" data-target="#editModal">i</a></td>
             </tr>
         </tbody>
     </table>
@@ -39,9 +41,9 @@
                 </div>
                 <div class="modal-body">
                     <form ng-submit="editPosition()">
-                        <input type="text" class="win-textbox" ng-model="CurrentPosition.Name" placeholder="Nombre" />
+                        <input type="text" class="win-textbox" ng-model="currentItem.Name" placeholder="Nombre" />
                         <br />
-                        <input type="text" class="win-textbox" ng-model="CurrentPosition.Description" placeholder="Descripción" />
+                        <input type="text" class="win-textbox" ng-model="currentItem.Description" placeholder="Descripción" />
                         <br />
                         <input type="submit" class="win-button win-button-primary" value="Guardar" />
                     </form>
