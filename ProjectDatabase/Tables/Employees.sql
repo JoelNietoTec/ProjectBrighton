@@ -5,6 +5,7 @@
     [PositionId] INT NOT NULL,
 	[HourRate] MONEY NULL,
     [StartDate] NCHAR(10) NULL, 
+    [CreateDate] DATETIME NULL, 
     CONSTRAINT [FK_Employees_ToPositions] FOREIGN KEY ([PositionId]) REFERENCES [Positions]([Id]) 
 )
 
@@ -17,3 +18,14 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'Employees',
     @level2type = NULL,
     @level2name = NULL
+GO
+
+CREATE TRIGGER [dbo].[Trigger_Employees]
+    ON [dbo].[Employees]
+    FOR INSERT
+    AS
+    BEGIN
+		Update [dbo].[Employees]
+		Set CreateDate = GETDATE()
+		WHERE Id IN (Select Id From inserted)
+    END
