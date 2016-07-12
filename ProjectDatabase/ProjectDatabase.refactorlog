@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b8c3278b-f4ba-48a0-a91e-6000089f7f58" ChangeDateTime="07/12/2016 22:09:00">
+    <Property Name="ElementName" Value="[dbo].[ClientTypes].[Modo]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientTypes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ModifyDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2b3a3b40-2fa9-4a66-b15f-57fca982b598" ChangeDateTime="07/12/2016 22:10:01">
+    <Property Name="ElementName" Value="[dbo].[Clients].[LastUpdate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Clients]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ModifyDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8ad03b46-8ef5-4453-8d8a-cca2d8b472cb" ChangeDateTime="07/12/2016 22:36:50">
+    <Property Name="ElementName" Value="[dbo].[MatterTypes].[Create]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[MatterTypes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreateDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="17a9796a-3957-4e40-a83c-067247c68607" ChangeDateTime="07/12/2016 22:38:51">
+    <Property Name="ElementName" Value="[dbo].[CreateClients]" />
+    <Property Name="ElementType" Value="SqlDmlTrigger" />
+    <Property Name="ParentElementName" Value="[dbo].[Clients]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[CreateDateClients]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3504c6e6-7248-4ed7-a6dd-0102dc9db4ae" ChangeDateTime="07/12/2016 22:40:09">
+    <Property Name="ElementName" Value="[dbo].[Clients].[CreationDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Clients]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreateDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="15e7ba6e-7684-4fd9-bf8e-c4f87358ea8e" ChangeDateTime="07/12/2016 22:58:07">
+    <Property Name="ElementName" Value="[dbo].[Trigger_Employees]" />
+    <Property Name="ElementType" Value="SqlDmlTrigger" />
+    <Property Name="ParentElementName" Value="[dbo].[Employees]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[CreateDateEmployees]" />
+  </Operation>
+</Operations>

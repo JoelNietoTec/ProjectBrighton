@@ -9,6 +9,8 @@
     [OpeningDate] DATE NULL, 
     [AdvanceBalance] MONEY NULL, 
     [StatusId] INT NOT NULL, 
+    [CreateDate] DATETIME NULL, 
+    [ModifyDate] DATETIME NULL, 
     CONSTRAINT [FK_Matters_ToClients] FOREIGN KEY ([ClientId]) REFERENCES [Clients]([Id]), 
     CONSTRAINT [FK_Matters_ToAttorneys] FOREIGN KEY ([AttorneyId]) REFERENCES [Employees]([Id]), 
     CONSTRAINT [FK_Matters_ToMatterTypes] FOREIGN KEY ([MatterTypeId]) REFERENCES [MatterTypes]([Id])
