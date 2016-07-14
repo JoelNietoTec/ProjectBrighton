@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWebAPI", "ProjectWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWebApplication", "ProjectWebApplication\ProjectWebApplication.csproj", "{B89264D6-C7EE-42D0-8D5C-BA874A6F133B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProjectNetCore", "ProjectNetCore\ProjectNetCore.xproj", "{8339A465-86D2-4C0E-A91B-1F8AEC4B4902}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ProjectNetCore", "ProjectNetCore\ProjectNetCore.xproj", "{D4698B1A-D595-469F-8F00-D33DA4BF563E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{B89264D6-C7EE-42D0-8D5C-BA874A6F133B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89264D6-C7EE-42D0-8D5C-BA874A6F133B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89264D6-C7EE-42D0-8D5C-BA874A6F133B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8339A465-86D2-4C0E-A91B-1F8AEC4B4902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8339A465-86D2-4C0E-A91B-1F8AEC4B4902}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8339A465-86D2-4C0E-A91B-1F8AEC4B4902}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8339A465-86D2-4C0E-A91B-1F8AEC4B4902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4698B1A-D595-469F-8F00-D33DA4BF563E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4698B1A-D595-469F-8F00-D33DA4BF563E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4698B1A-D595-469F-8F00-D33DA4BF563E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4698B1A-D595-469F-8F00-D33DA4BF563E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
