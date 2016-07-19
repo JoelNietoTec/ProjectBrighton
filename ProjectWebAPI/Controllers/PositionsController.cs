@@ -13,7 +13,7 @@ using System.Web.Http.Cors;
 
 namespace ProjectWebAPI.Controllers
 {
-    [EnableCors(origins: "http://localhost:28278", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:28278, http://localhost:5000", headers: "*", methods: "*")]
     public class PositionsController : ApiController
     {
         private ClientsEntities db = new ClientsEntities();

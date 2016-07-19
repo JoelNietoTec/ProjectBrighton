@@ -1,0 +1,31 @@
+<div class="container body-content config-container" ng-app="configApp">
+    <ul class="nav nav-pills sections">
+        <li class="active" role="presentation">
+            <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
+                Cargos
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#industries" aria-controls="industries" role="tab" data-toggle="tab">
+                Industrias
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#matterTypes" aria-controls="matterTypes" role="tab" data-toggle="tab">
+                Tipos de Asunto
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" role="tabpanel" id="positions"></div>
+        <div class="tab-pane" role="tabpanel" id="industries">
+            @Html.Partial("~/Views/Industries/Index.cshtml")
+        </div>     
+        <div class="tab-pane"></div>
+    </div>
+</div>
+<environment names="Development">
+    <script src="~/js/modules/configurations/controllers/industries.js"></script>
+    <script src="~/js/modules/configurations/app.js"></script>
+</environment>
+

@@ -1,0 +1,18 @@
+<h3>Industrias</h3>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newModal">
+    Nuevo
+</button>
+<div ng-controller="industriesController as positions">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Fec. Creado</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+    </table>
+    @Html.Partial("~/Views/Industries/New.cshtml")
+</div>
