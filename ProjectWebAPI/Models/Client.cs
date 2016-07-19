@@ -14,6 +14,7 @@ namespace ProjectWebAPI.Models
             Matters = new HashSet<Matter>();
         }
 
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -34,9 +35,9 @@ namespace ProjectWebAPI.Models
 
         public byte? Status { get; set; }
 
-        public DateTime CreationDate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
-        public DateTime? LastUpdate { get; set; }
+        public DateTime? ModifyDate { get; set; }
 
         public virtual Employee Employee { get; set; }
 

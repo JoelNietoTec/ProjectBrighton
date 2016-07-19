@@ -38,7 +38,7 @@ var positionsController = function ($scope, $http) {
     };
 
     $scope.editPosition = function (items) {
-        $scope.currentItem = item;
+        $scope.editItem = item;
         console.log(item);
     };
 

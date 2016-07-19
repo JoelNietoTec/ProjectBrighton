@@ -6,13 +6,23 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th></th>
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Fec. Creado</th>
-                <th>Eliminar</th>
+                <th>Creado</th>
             </tr>
         </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td><a href="#" class="btn btn-sm btn-primary" ng-click="editIndustry(item)" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil-square-o"></i></a></td>
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.formattedDate}}</td>
+            </tr>
+        </tbody>
     </table>
     @Html.Partial("~/Views/Industries/New.cshtml")
+    @Html.Partial("~/Views/Industries/Edit.cshtml")
 </div>

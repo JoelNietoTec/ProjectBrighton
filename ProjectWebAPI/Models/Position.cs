@@ -14,6 +14,7 @@ namespace ProjectWebAPI.Models
             
         }
 
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -22,6 +23,10 @@ namespace ProjectWebAPI.Models
 
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
+
+        public DateTime? CreateDate { get; set; }
+
+        public DateTime? ModifyDate { get; set; }
 
     }
 }

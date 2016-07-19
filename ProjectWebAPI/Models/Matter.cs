@@ -9,6 +9,7 @@ namespace ProjectWebAPI.Models
     public partial class Matter
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int Id { get; set; }
 
         public int ClientId { get; set; }
@@ -30,6 +31,10 @@ namespace ProjectWebAPI.Models
         public decimal? AdvanceBalance { get; set; }
 
         public int StatusId { get; set; }
+
+        public DateTime? CreateDate { get; set; }
+
+        public DateTime? ModifyDate { get; set; }
 
         public virtual Client Client { get; set; }
 

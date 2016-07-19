@@ -15,6 +15,7 @@ namespace ProjectWebAPI.Models
             Matters = new HashSet<Matter>();
         }
 
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -26,8 +27,11 @@ namespace ProjectWebAPI.Models
         [Column(TypeName = "money")]
         public decimal? HourRate { get; set; }
 
-        [StringLength(10)]
-        public string StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
+
+        public DateTime? CreateDate { get; set; }
+
+        public DateTime? ModifyDate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Clients { get; set; }

@@ -34,10 +34,6 @@ namespace ProjectWebAPI.Models
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.StartDate)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Clients)
                 .WithRequired(e => e.Employee)
                 .HasForeignKey(e => e.AttorneyId)

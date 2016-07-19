@@ -11,9 +11,10 @@ namespace ProjectWebAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Industry()
         {
-            Clients = new HashSet<Client>();
+            
         }
 
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -23,7 +24,9 @@ namespace ProjectWebAPI.Models
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Client> Clients { get; set; }
+        public DateTime? CreateDate { get; set; }
+
+        public DateTime? ModifyDate { get; set; }
+        
     }
 }

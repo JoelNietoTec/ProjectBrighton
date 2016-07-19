@@ -10,5 +10,9 @@ namespace ProjectNetCore.Controllers
         public IActionResult New() {
             return View();
         }
+
+        public IActionResult Edit() {
+            return View();
+        }
     }
 }
