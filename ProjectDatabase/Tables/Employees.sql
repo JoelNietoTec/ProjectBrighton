@@ -19,26 +19,3 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
 	@level1name = N'Employees',
 	@level2type = NULL,
 	@level2name = NULL
-GO
-
-CREATE TRIGGER [dbo].[CreateDateEmployees]
-	ON [dbo].[Employees]
-	FOR INSERT
-	AS
-	BEGIN
-		UPDATE [dbo].[Employees]
-		SET CreateDate = GETDATE()
-		WHERE Id IN (SELECT Id FROM inserted)
-	END
-GO
-
-CREATE TRIGGER [dbo].[ModifyDateEmployees]
-	ON [dbo].[Employees]
-	FOR UPDATE
-	AS
-	BEGIN
-		IF NOT UPDATE(CreateDate)
-		UPDATE [dbo].[Employees]
-		SET ModifyDate = GETDATE()
-		WHERE Id IN (SELECT Id FROM inserted)
-	END

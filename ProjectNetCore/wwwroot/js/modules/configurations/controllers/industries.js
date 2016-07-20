@@ -1,77 +1,57 @@
-﻿var industriesController = function ($scope, $http) {
+﻿var industriesController = function ($scope, $http, crudService, formatService) {
 
     $scope.NewIndustry = {};
 
     $scope.getIndustries = function () {
-        $scope.items = [];
-
-        $http.get($scope.apiURL + "Industries")
-            .success(function (data) {             
-                data.forEach(function(element) {
-                    element.formattedDate = moment(element.CreateDate).startOf('minute').fromNow();
+        crudService.getItems($scope.apiURL + "Industries")
+            .then(function (d) {
+                d.forEach(function (e) {
+                    e.frmtCreateDate = formatService.relativeTime(e.CreateDate);
+                    e.frmtModifyDate = formatService.relativeTime(e.ModifyDate);
                 }, this);
-                $scope.items = data;
-                console.log(data);
-            })
-            .error(function (err) {
-                console.log(err);
+                $scope.items = d;
             });
     };
 
     $scope.addIndustry = function () {
         var industry = $scope.newIndustry;
-        console.log(industry);
-        $http.post(
-            $scope.apiURL + "Industries",
-            JSON.stringify(industry),
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+        crudService.addItem($scope.apiURL + "Industries", industry)
+            .then(function (d) {
+                $scope.newIndustry = {};
+                d.frmtCreateDate = moment().startOf('minute').fromNow();
+                $scope.items.push(d);
+                console.log(d);
+                $(document).ready(function () {
+                    $('#newModal').modal('hide');
+                });
             })
-        .success(function (data, status, headers, config) {
-            $scope.NewIndustry = {};
-            data.formattedDate = moment().startOf('minute').fromNow();
-            $scope.items.push(data);
-            console.log(data);
-            $(document).ready(function() {
-                $('#newModal').modal('hide');
-            })
-        })
-        .error(function (data, status, headers, config) {
-            console.log(error);
-        });
-    };
+    }
 
-
-    $scope.editIndustry = function(item) {
-        $scope.currentIndustry = item;
+    $scope.editIndustry = function (item) {
+        $scope.editedIndustry = {};
+        console.log(item.$index);
+        $scope.selectedItem = item;
+        $scope.editedIndustry = angular.copy($scope.selectedItem);
         console.log(item);
     };
 
-    $scope.updateIndustry = function() {
-        var industry = $scope.currentIndustry;
-        $http.put(
-            $scope.apiURL + "Industries/" + industry.Id,
-            JSON.stringify(industry),
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-        .success(function(data, status, headers, config) {
-            $scope.currentIndustry = {};
-            data.formatModDate = moment().startOf('minute').fromNow();
-            $scope.items = {}
-            console.log(data);
-            $scope.getIndustries();
-            $(document).ready(function() {
+    $scope.updateIndustry = function () {
+        if (angular.toJson($scope.editedIndustry) === angular.toJson($scope.selectedItem)) {
+            $(document).ready(function () {
                 $('#editModal').modal('hide');
-            })
-        })
-        .error(function (data, status, header, config) {
-            console.log(error);
-        });
+            });
+        } else {
+            var industry = $scope.editedIndustry;
+            crudService.updateItem($scope.apiURL + "Industries", industry.Id, industry)
+                .then(function (d) {
+                    industry.frmtModifyDate = moment().startOf('minute').fromNow();
+                    console.log($scope.selectedItem);
+                    $scope.selectedItem = industry;
+                    $(document).ready(function () {
+                        $('#editModal').modal('hide');
+                    });
+                });
+        }
     };
 
     $scope.removeIndustry = function (item) {
@@ -89,4 +69,4 @@
     $scope.getIndustries();
 };
 
-industriesController.$inject = ['$scope', '$http'];
+industriesController.$inject = ['$scope', '$http', 'crudService', 'formatService'];

@@ -50,7 +50,7 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest();
             }
-
+            industry.ModifyDate = DateTime.Now; //Se ajusta la fecha de modificación del elemento
             db.Entry(industry).State = EntityState.Modified;
 
             try
@@ -80,7 +80,7 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            industry.CreateDate = DateTime.Now; // Se ajusta la fecha de Creación del elemento
             db.Industries.Add(industry);
             db.SaveChanges();
 
