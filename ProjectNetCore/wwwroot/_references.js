@@ -6,6 +6,7 @@
 /// <reference path="js/modules/configurations/app.js" />
 /// <reference path="js/modules/configurations/controllers/industries.js" />
 /// <reference path="js/modules/configurations/controllers/positions.js" />
+/// <reference path="js/modules/configurations/controllers/mattertypes.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/angular/angular.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />

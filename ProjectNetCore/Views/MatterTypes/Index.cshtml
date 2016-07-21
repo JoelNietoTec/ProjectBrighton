@@ -1,8 +1,8 @@
-<h3>Industrias</h3>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newIndustryModal">
+<h3>Tipos de Asunto</h3>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMatterTypeModal">
     Nuevo
 </button>
-<div ng-controller="industriesController as industries">
+<div ng-controller="mattertypesController as matterTypes">
     <table class="table table-striped">
         <thead>
             <th></th>
@@ -14,7 +14,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="item in items">
-                <td><a href="#" class="btn btn-sm btn-primary" ng-click="editIndustry(item)" data-toggle="modal" data-target="#editIndustryModal"><i class="fa fa-pencil-square-o"></i></a></td>
+                <td><a href="#" class="btn btn-sm btn-primary" ng-click="editMatterType(item)" data-toggle="modal" data-target="#editMatterTypeModal"><i class="fa fa-pencil-square-o"></i></a></td>
                 <td>{{item.Id}}</td>
                 <td>{{item.Name}}</td>
                 <td>{{item.Description}}</td>
@@ -23,6 +23,6 @@
             </tr>
         </tbody>
     </table>
-    @Html.Partial("~/Views/Industries/New.cshtml")
-    @Html.Partial("~/Views/Industries/Edit.cshtml")
+    @Html.Partial("~/Views/MatterTypes/New.cshtml")
+    @Html.Partial("~/Views/MatterTypes/Edit.cshtml")
 </div>

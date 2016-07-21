@@ -21,6 +21,9 @@ namespace ProjectWebAPI.Models
         [StringLength(50)]
         public string Name { get; set; }
 
+        [Column(TypeName = "ntext")]
+        public string Description { get; set; }
+
         public DateTime? CreateDate { get; set; }
 
         public DateTime? ModifyDate { get; set; }

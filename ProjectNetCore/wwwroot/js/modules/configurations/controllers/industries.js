@@ -1,14 +1,12 @@
 ﻿var industriesController = function ($scope, $http, crudService, formatService) {
 
-    $scope.NewIndustry = {};
+    $scope.newIndustry = {};
 
     $scope.getIndustries = function () {
+        $scope.items = {};
         crudService.getItems($scope.apiURL + "Industries")
             .then(function (d) {
-                d.forEach(function (e) {
-                    e.frmtCreateDate = formatService.relativeTime(e.CreateDate);
-                    e.frmtModifyDate = formatService.relativeTime(e.ModifyDate);
-                }, this);
+                d = formatService.frmDates(d);
                 $scope.items = d;
             });
     };
@@ -20,36 +18,25 @@
                 $scope.newIndustry = {};
                 d.frmtCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
-                console.log(d);
-                $(document).ready(function () {
-                    $('#newModal').modal('hide');
-                });
-            })
-    }
+                formatService.closeModal('#newIndustryModal');
+            });
+    };
 
     $scope.editIndustry = function (item) {
-        $scope.editedIndustry = {};
-        console.log(item.$index);
         $scope.selectedItem = item;
         $scope.editedIndustry = angular.copy($scope.selectedItem);
-        console.log(item);
     };
 
     $scope.updateIndustry = function () {
         if (angular.toJson($scope.editedIndustry) === angular.toJson($scope.selectedItem)) {
-            $(document).ready(function () {
-                $('#editModal').modal('hide');
-            });
+            formatService.closeModal('#editIndustryModal');
         } else {
             var industry = $scope.editedIndustry;
             crudService.updateItem($scope.apiURL + "Industries", industry.Id, industry)
                 .then(function (d) {
                     industry.frmtModifyDate = moment().startOf('minute').fromNow();
-                    console.log($scope.selectedItem);
-                    $scope.selectedItem = industry;
-                    $(document).ready(function () {
-                        $('#editModal').modal('hide');
-                    });
+                    $scope.getIndustries();
+                    formatService.closeModal('#editIndustryModal');
                 });
         }
     };

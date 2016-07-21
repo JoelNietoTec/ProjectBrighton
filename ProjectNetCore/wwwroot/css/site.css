@@ -1,7 +1,9 @@
-﻿body {
+﻿@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Raleway', Tahoma, Geneva, Verdana, sans-serif;
     }
 
 /* Wrapping element */
@@ -44,7 +46,6 @@
 }
 
 .nav-pills > li > a {
-    font-family: "Segoe","Segoe UI Emoji", Helvetica,Arial,sans-serif;
     border-radius: 0;
     text-transform: uppercase;
     color: #495361;

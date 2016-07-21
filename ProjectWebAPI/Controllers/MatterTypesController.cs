@@ -51,6 +51,8 @@ namespace ProjectWebAPI.Controllers
                 return BadRequest();
             }
 
+            matterType.ModifyDate = DateTime.Now; //Se ajusta la fecha de modificación del elemento
+
             db.Entry(matterType).State = EntityState.Modified;
 
             try
@@ -80,6 +82,8 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            matterType.CreateDate = DateTime.Now; // Se ajusta la fecha de creación del elemento
 
             db.MatterTypes.Add(matterType);
             db.SaveChanges();

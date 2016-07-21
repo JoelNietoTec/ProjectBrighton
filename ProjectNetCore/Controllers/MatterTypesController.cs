@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ProjectNetCore.Controllers
+namespace ProjectNetCore.Controller
 {
-    public class PositionsController : Controller
+    public class MatterTypesController : Controller
     {
         public IActionResult Index()
         {

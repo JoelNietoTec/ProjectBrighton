@@ -1,4 +1,4 @@
-<div class="modal fade" id="editIndustryModal" tabindex="-1" role="dialog" aria-labelledby="editLabel">
+<div class="modal fade" id="editMatterTypeModal" tabindex="-1" role="dialog" aria-labelledby="editLabel">
     <div class="modal-dialog" role="form">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,14 +8,14 @@
                 <h4 class="modal-title" id="editLabel">Editar Elemento</h4>
             </div>
             <div class="modal-body">
-                <form ng-submit="updateIndustry()" class="row">
+                <form ng-submit="updateMatterType()" class="row">
                     <div class="form-group col-md-6">
-                        <label class="control-label" for="edit-industry-name">Nombre</label>
-                        <input id="edit-industry-name" type="text" class="form-control" ng-model="editedIndustry.Name" placeholder="Nombre" />
+                        <label class="control-label" for="edit-matter-type-name">Nombre</label>
+                        <input id="edit-matter-type-name" type="text" class="form-control" ng-model="editedMatterType.Name" placeholder="Nombre" />
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="edit-industry-desc" class="control-label">Descripción</label>
-                        <input type="text" id="edit-industry-desc" class="form-control" ng-model="editedIndustry.Description" placeholder="Descripción"/>
+                        <label for="edit-matter-type-desc" class="control-label">Descripción</label>
+                        <input type="text" id="edit-matter-type-desc" class="form-control" ng-model="editedMatterType.Description" placeholder="Descripción"/>
                     </div>
                     <div class="col-md-6 col-md-offset-6 text-right">
                         <button type="button" class="btn btn-danger " data-dismiss="modal">
