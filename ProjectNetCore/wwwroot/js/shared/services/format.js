@@ -8,17 +8,38 @@ var formatService = function () {
             return ' ';
     };
 
+    formatFunctions.legibleDate = function (date) {
+        if (moment(date).isValid() && date)
+            return moment(date).format('LL');
+        else
+            return ' ';
+    };
+
+    formatFunctions.toObject = function (arr) {
+        var rv = {};
+        for (var i = 0; i < arr.length; ++i)
+        console.log(arr[0]);
+            if (arr[i] !== undefined) rv[arr[i].id] = arr[i].name;
+        return rv;
+    };
+
     formatFunctions.frmDates = function (array) {
         array.forEach(function (e) {
-            e.frmtCreateDate = formatFunctions.relativeTime(e.CreateDate);
-            e.frmtModifyDate = formatFunctions.relativeTime(e.ModifyDate);
+            //Formato de fechas legibles
+            e.frmtCreateDate = formatFunctions.legibleDate(e.CreateDate);
+            e.frmtModifyDate = formatFunctions.legibleDate(e.ModifyDate);
+            e.frmtStartDate = formatFunctions.legibleDate(e.StartDate);
+
+            //Fechas relativas
+            e.relCreateDate = formatFunctions.relativeTime(e.CreateDate);
+            e.relModifyDate = formatFunctions.relativeTime(e.ModifyDate);
         }, this);
         return array;
     };
 
-    formatFunctions.closeModal = function (id) {
-        $(document).ready(function(){
-            $(id).modal('hide');
+    formatFunctions.toggleModal = function (id, event) {
+        $(document).ready(function () {
+            $(id).modal(event);
         });
     };
 

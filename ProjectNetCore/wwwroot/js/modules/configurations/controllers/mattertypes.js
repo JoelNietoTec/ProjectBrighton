@@ -18,7 +18,7 @@ var mattertypesController = function ($scope, $http, crudService, formatService)
                 $scope.newMatterType = {};
                 d.frmtCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
-                formatService.closeModal('#newMatterTypeModal');
+                formatService.toggleModal('#newMatterTypeModal', 'hide');
             });
     };
 
@@ -29,14 +29,14 @@ var mattertypesController = function ($scope, $http, crudService, formatService)
 
     $scope.updateMatterType = function () {
         if (angular.toJson($scope.editedMatterType) === angular.toJson($scope.selectedItem)) {
-            formatService.closeModal('#editMatterTypeModal');
+            formatService.toggleModal('#editMatterTypeModal', 'hide');
         } else {
             var MatterType = $scope.editedMatterType;
             crudService.updateItem($scope.apiURL + "MatterTypes", MatterType.Id, MatterType)
                 .then(function (d) {
                     MatterType.frmtModifyDate = moment().startOf('minute').fromNow();
                     $scope.getMatterTypes();
-                    formatService.closeModal('#editMatterTypeModal');
+                    formatService.toggleModal('#editMatterTypeModal', 'hide');
                 });
         }
     };

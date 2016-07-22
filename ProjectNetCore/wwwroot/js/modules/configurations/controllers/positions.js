@@ -7,7 +7,6 @@ var positionsController = function ($scope, $http, crudService, formatService) {
         crudService.getItems($scope.apiURL + "Positions")
             .then(function (d) {
                 d = formatService.frmDates(d);
-                console.log(d);
                 $scope.items = d;
             });
     };
@@ -19,7 +18,7 @@ var positionsController = function ($scope, $http, crudService, formatService) {
                 $scope.newPosition = {};
                 d.frmCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
-                formatService.closeModal('#newPositionModal');
+                formatService.toggleModal('#newPositionModal', 'hide');
             });
     };
 
@@ -30,7 +29,7 @@ var positionsController = function ($scope, $http, crudService, formatService) {
 
     $scope.updatePosition = function () {
         if (angular.toJson($scope.editedPosition) === angular.toJson($scope.selectedItem)) {
-            formatService.closeModal('#editPositionModal');
+            formatService.toggleModal('#editPositionModal', 'hide');
         } else {
             var position = $scope.editedPosition;
             crudService.updateItem($scope.apiURL + "Positions", position.Id, position)
@@ -38,7 +37,7 @@ var positionsController = function ($scope, $http, crudService, formatService) {
                     console.log(position);
                     position.frmModifyDate = moment().startOf('minute').fromNow();
                     $scope.getPositions();
-                    formatService.closeModal('#editPositionModal');
+                    formatService.toggleModal('#editPositionModal', 'hide');
                 });
         };
     };

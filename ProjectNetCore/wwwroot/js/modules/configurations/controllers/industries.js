@@ -18,7 +18,7 @@
                 $scope.newIndustry = {};
                 d.frmtCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
-                formatService.closeModal('#newIndustryModal');
+                formatService.toggleModal('#newIndustryModal', 'hide');
             });
     };
 
@@ -29,14 +29,14 @@
 
     $scope.updateIndustry = function () {
         if (angular.toJson($scope.editedIndustry) === angular.toJson($scope.selectedItem)) {
-            formatService.closeModal('#editIndustryModal');
+            formatService.toggleModal('#editIndustryModal', 'hide');
         } else {
             var industry = $scope.editedIndustry;
             crudService.updateItem($scope.apiURL + "Industries", industry.Id, industry)
                 .then(function (d) {
                     industry.frmtModifyDate = moment().startOf('minute').fromNow();
                     $scope.getIndustries();
-                    formatService.closeModal('#editIndustryModal');
+                    formatService.toggleModal('#editIndustryModal', 'hide');
                 });
         }
     };

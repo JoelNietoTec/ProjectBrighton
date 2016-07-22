@@ -1,6 +1,11 @@
-<div class="container body-content config-container" ng-app="configApp">
+<div class="config-container" ng-app="configApp">
     <ul class="nav nav-pills sections" role="tablist">
         <li class="active" role="presentation">
+            <a href="#employees" aria-controls="employees" role="tab" data-toggle="tab">
+                Empleados
+            </a>
+        </li>
+        <li role="presentation">
             <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
                 Cargos
             </a>
@@ -17,7 +22,10 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div class="active tab-pane" role="tabpanel" id="positions">
+        <div class="active tab-pane" role="tabpanel" id="employees">
+            @Html.Partial("~/Views/Employees/Index.cshtml")
+        </div>
+        <div class="tab-pane" role="tabpanel" id="positions">
             @Html.Partial("~/Views/Positions/Index.cshtml")
         </div>
         <div class="tab-pane" role="tabpanel" id="industries">
@@ -33,6 +41,7 @@
         <script src="js/shared/services/crud.js"></script>
         <script src="js/shared/services/format.js"></script>
         <script src="js/shared/sharedCode.js"></script>
+        <script src="~/js/modules/configurations/controllers/employees.js"></script>
         <script src="~/js/modules/configurations/controllers/industries.js"></script>
         <script src="~/js/modules/configurations/controllers/positions.js"></script>
         <script src="~/js/modules/configurations/controllers/mattertypes.js"></script>
