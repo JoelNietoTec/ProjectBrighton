@@ -6,11 +6,14 @@
 	[ClientTypeId] INT NOT NULL, 
 	[IndustryId] INT NOT NULL, 
 	[AttorneyId] INT NOT NULL, 
+	[Email] VARCHAR(50) NULL, 
 	[Notes] NTEXT NULL, 
 	[Status] TINYINT NULL, 
 	[CreateDate] DATETIME NULL, 
 	[ModifyDate] DATETIME NULL, 
+	[CountryId] INT NOT NULL, 
 	CONSTRAINT [FK_Clients_ToClientTypes] FOREIGN KEY ([ClientTypeId]) REFERENCES [ClientTypes]([Id]), 
 	CONSTRAINT [FK_Clients_ToIndustries] FOREIGN KEY ([IndustryId]) REFERENCES [Industries]([Id]), 
-	CONSTRAINT [FK_Clients_ToAttorneys] FOREIGN KEY ([AttorneyId]) REFERENCES [Employees]([Id])
+	CONSTRAINT [FK_Clients_ToAttorneys] FOREIGN KEY ([AttorneyId]) REFERENCES [Employees]([Id]), 
+	CONSTRAINT [FK_Clients_ToCountries] FOREIGN KEY ([CountryId]) REFERENCES [Countries]([Id])
 )

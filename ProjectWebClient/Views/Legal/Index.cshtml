@@ -2,4 +2,23 @@
     ViewData["Title"] = "Legal";
 }
 
-<h2>@ViewData["Description"].</h2>
+<div class="config-container" ng-app="legalApp">
+    <ul class="nav nav-pills sections" role="tablist">
+        <li class="active" role="presentation">
+            <a href="#clients" aria-controls="clients" role="tab" data-toggle="tab">
+                Clients
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="active tab-pane" id="clients" role="tabpanel">
+            @Html.Partial("~/Views/Clients/Clients/Index.cshtml")
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <environment names="Development">
+        <script src="~/js/modules/legal/controllers/clients.js"></script>
+        <script src="~/js/modules/legal/app.js"></script>
+    </environment>
+}

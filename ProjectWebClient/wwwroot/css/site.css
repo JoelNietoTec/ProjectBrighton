@@ -4,6 +4,7 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     font-family: 'Raleway', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f3f4;
     }
 
 /* Wrapping element */
@@ -38,9 +39,14 @@ body {
 }
 
 .tab-content > .active {
+    margin: 15px;
     padding: 15px;
+    background-color: #fff;
 }
 
+.centered {
+    text-align: center;
+}
 .sections {
     border-bottom: 1px solid #D4D4D5;
 }
@@ -59,7 +65,7 @@ body {
 .nav-pills > li.active > a:focus {
     border-radius: 0;
     text-transform: uppercase;
-    background-color: #FFF;
+    background-color: #f3f3f4;
     color: #495361;
     border-bottom: 5px solid #337ab7;
     opacity: 1;
@@ -67,7 +73,7 @@ body {
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-    background-color: #FFF;
+    background-color: #f3f3f4;
 }
 a:focus {
     outline: 0;

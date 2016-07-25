@@ -19,6 +19,7 @@ namespace ProjectWebAPI.Models
         public virtual DbSet<Matter> Matters { get; set; }
         public virtual DbSet<MatterType> MatterTypes { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -58,6 +59,8 @@ namespace ProjectWebAPI.Models
             modelBuilder.Entity<MatterType>();
 
             modelBuilder.Entity<Position>();
+
+            modelBuilder.Entity<Country>();
         }
     }
 }

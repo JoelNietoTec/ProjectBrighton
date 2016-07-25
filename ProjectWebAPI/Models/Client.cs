@@ -35,6 +35,8 @@ namespace ProjectWebAPI.Models
 
         public byte? Status { get; set; }
 
+        public int CountryId { get; set; }
+
         public DateTime? CreateDate { get; set; }
 
         public DateTime? ModifyDate { get; set; }
@@ -44,6 +46,8 @@ namespace ProjectWebAPI.Models
         public virtual ClientType ClientType { get; set; }
 
         public virtual Industry Industry { get; set; }
+
+        public virtual Country Country { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Matter> Matters { get; set; }

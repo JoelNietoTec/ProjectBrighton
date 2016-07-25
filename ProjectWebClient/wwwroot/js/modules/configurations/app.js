@@ -11,3 +11,5 @@ configApp.controller('industriesController', industriesController);
 configApp.controller('positionsController', positionsController);
 
 configApp.controller('mattertypesController', mattertypesController);
+
+configApp.controller('clienttypesController', clienttypesController);
