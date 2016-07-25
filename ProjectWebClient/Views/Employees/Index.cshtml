@@ -1,0 +1,32 @@
+<h3>Empleados</h3>
+
+<div ng-controller="employeesController as employees">
+    <button type="button" class="btn btn-primary" ng-click="createEmployee()">
+        Nuevo
+    </button>
+    <table class="table table-striped">
+        <thead>
+            <th></th>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Cargo</th>
+            <th>Tarifa</th>
+            <th>Fecha de Ingreso</th>
+            <th>Creado</th>
+            <th>Modificado</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td></td>
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Position.Name}}</td>
+                <td>{{item.HourRate}}</td>
+                <td>{{item.frmtStartDate}}</td>
+                <td>{{item.relCreateDate}}</td>
+                <td>{{item.relModifyDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    @Html.Partial("~/Views/Employees/New.cshtml")
+</div>

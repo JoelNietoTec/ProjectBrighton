@@ -1,0 +1,31 @@
+<div class="modal fade" id="newMatterTypeModal" tabindex="-1" role="dialog" aria-labelledby="newLabel">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="newLabel">Nuevo Elemento</h4>
+            </div>
+            <div class="modal-body">
+                <form ng-submit="addMatterType()" class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="sr-only" for="new-matter-type-name">Nombre</label>
+                            <input id="new-matter-type-name" type="text" class="form-control" ng-model="newMatterType.Name" placeholder="Nombre" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="new-matter-type-desc" class="sr-only">Descripción</label>
+                            <input type="text" id="new-matter-type-desc" class="form-control" ng-model="newMatterType.Description" placeholder="Descripción"/>
+                        </div>  
+                    </div>
+                    <div class="col-md-2 col-md-offset-10">
+                        <input type="submit" class="btn btn-primary" value="Guardar"/>
+                   </div>           
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
