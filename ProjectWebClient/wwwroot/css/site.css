@@ -1,11 +1,16 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Raleway);
+﻿@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Raleway', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Titillium Web', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f3f4;
+    font-size: 15px;
     }
+
+h1, h2, h3, h4, h5 {
+    font-weight: 400;
+}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -85,7 +90,7 @@ a:focus {
 
 .form-control {
      border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 0;
     margin: 8px 0px;
     color: #000000;
@@ -98,7 +103,7 @@ a:focus {
     border-style: solid;
     margin: 0px;
     padding: 4px 8px;
-    border-width: 2px;
+    border-width: 0;
     background-clip: border-box;
     border-radius: 0;
     touch-action: manipulation;
@@ -107,6 +112,10 @@ a:focus {
 .modal-header {
     background-color: #0076A3;
     color: #fff;
+}
+
+.modal-footer {
+    background-color: #f3f3f4;
 }
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {

@@ -16,7 +16,7 @@ var mattertypesController = function ($scope, $http, crudService, formatService)
         crudService.addItem($scope.apiURL + "MatterTypes", mattertype)
             .then(function (d) {
                 $scope.newMatterType = {};
-                d.frmtCreateDate = moment().startOf('minute').fromNow();
+                d.relCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
                 formatService.toggleModal('#newMatterTypeModal', 'hide');
             });

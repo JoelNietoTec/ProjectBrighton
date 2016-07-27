@@ -16,7 +16,7 @@ var positionsController = function ($scope, $http, crudService, formatService) {
         crudService.addItem($scope.apiURL + "Positions", position)
             .then(function (d) {
                 $scope.newPosition = {};
-                d.frmCreateDate = moment().startOf('minute').fromNow();
+                d.relCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
                 formatService.toggleModal('#newPositionModal', 'hide');
             });

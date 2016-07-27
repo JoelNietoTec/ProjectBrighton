@@ -1,0 +1,31 @@
+<div class="modal fade" id="newPositionModal" tabindex="-1" role="dialog" aria-labelledby="newLabel">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="newLabel">Nuevo Elemento</h4>
+            </div>
+            <div class="modal-body">
+                <form ng-submit="addPosition()" class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="sr-only" for="new-position-name">Nombre</label>
+                            <input id="new-position-name" type="text" class="form-control" ng-model="newPosition.Name" placeholder="Nombre" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="new-positon-desc" class="sr-only">Descripción</label>
+                            <input type="text" id="new-positon-desc" class="form-control" ng-model="newPosition.Description" placeholder="Descripción"/>
+                        </div>  
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Guardar"/>
+                   </div>           
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

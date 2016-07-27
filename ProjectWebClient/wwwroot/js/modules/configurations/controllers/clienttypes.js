@@ -16,7 +16,7 @@ var clienttypesController = function ($scope, $http, crudService, formatService)
         crudService.addItem($scope.apiURL + "ClientTypes", clienttype)
             .then(function (d) {
                 $scope.newClientType = {};
-                d.frmtCreateDate = moment().startOf('minute').fromNow();
+                d.relCreateDate = moment().startOf('minute').fromNow();
                 $scope.items.push(d);
                 formatService.toggleModal('#newClientTypeModal', 'hide');
             });

@@ -1,15 +1,23 @@
 <h3>Clientes</h3>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newClientModal">
-    Nuevo
-</button>
-<div ng-controller="clientsController as Clients">
+
+<div ng-controller="clientsController as clients">
+    <button type="button" class="btn btn-primary" ng-click="createClient()">
+        Nuevo
+    </button>
     <table class="table table-striped table-condensed">
         <thead>
             <th></th>
             <th>#</th>
             <th>Nombre</th>
             <th>Nombre Factura</th>
-            <th></th>
+            <th>Tipo Cliente</th>
+            <th>Email</th>
+            <th>País</th>
+            <th>Industria</th>
+            <th>Abogado</th>
+            <th>Creado</th>
+            <th>Modificado</th>
         </thead>
     </table>
+    @Html.Partial("~/Views/Clients/New.cshtml")
 </div>

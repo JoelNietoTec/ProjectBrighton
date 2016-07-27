@@ -7,17 +7,17 @@
                 </button>
                 <h4 class="modal-title" id="newLabel">Nuevo Elemento</h4>
             </div>
-            <div class="modal-body">
-                <form ng-submit="addEmployee()" class="row">
+            <form ng-submit="addEmployee()">
+                <div class="modal-body row">           
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label" for="new-employee-name">Nombre</label>
+                            <label class="sr-only" for="new-employee-name">Nombre</label>
                             <input id="new-employee-name" type="text" class="form-control" ng-model="newEmployee.Name" placeholder="Nombre del empleado" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="new-employee-position" class="control-label">Cargo</label>
+                            <label for="new-employee-position" class="sr-only">Cargo</label>
                             <select name="new-employee-position" id="new-employee-position" ng-model="newEmployee.PositionId" class="form-control">
                                 <option value="" disabled selected>***Elija un cargo***</option>
                                 <option ng-repeat="position in positions" value="{{position.Id}}">{{position.Name}}</option>
@@ -26,21 +26,23 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="new-employee-rate" class="control-label">Tarifa</label>
+                            <label for="new-employee-rate" class="sr-only">Tarifa</label>
                             <input type="number" class="form-control" name="new-employee-rate" ng-model="newEmployee.HourRate" id="new-employee-rate" placeholder="$ / hora">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="new-employee-date" class="control-label">Fecha de Ingreso</label>
+                            <label for="new-employee-date" class="sr-only">Fecha de Ingreso</label>
                             <input type="text" class="datepicker form-control" ng-model="newEmployee.StartDate" id="new-employee-date" name="new-employee-date" placeholder="Fecha de ingreso">
                         </div>
                     </div>
-                    <div class="col-md-2 col-md-offset-10">
-                        <input type="submit" class="btn btn-primary" value="Guardar"/>
-                   </div>           
-                </form>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Guardar"/>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
