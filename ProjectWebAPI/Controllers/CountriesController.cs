@@ -9,11 +9,15 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using ProjectWebAPI.Models;
+using System.Web.Http.Cors;
 
 namespace ProjectWebAPI.Controllers
 {
+    [EnableCors(origins: "http://localhost:28278, http://localhost:5000", headers: "*", methods: "*")]
     public class CountriesController : ApiController
     {
+        
+
         private ClientsEntities db = new ClientsEntities();
 
         // GET: api/Countries

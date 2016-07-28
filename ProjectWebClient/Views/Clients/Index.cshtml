@@ -18,6 +18,21 @@
             <th>Creado</th>
             <th>Modificado</th>
         </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td class="centered"><a href="#" ng-click="editClient(item)" data-toggle="modal" data-target="#editClientModal"><i class="fa fa-pencil"></i></a></td>
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.BillName}}</td>
+                <td>{{item.ClientType.Name}}</td>
+                <td>{{item.Email}}</td>
+                <td class="capitalize">{{item.Country.SpanishName}}</td>
+                <td>{{item.Industry.Name}}</td>
+                <td>{{item.Employee.Name}}</td>
+                <td>{{item.relCreateDate}}</td>
+                <td>{{item.relModifyDate}}</td>
+            </tr>
+        </tbody>
     </table>
     @Html.Partial("~/Views/Clients/New.cshtml")
 </div>

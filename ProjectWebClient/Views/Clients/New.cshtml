@@ -8,52 +8,86 @@
                 <h4 class="modal-title" id="newLabel">Nuevo Elemento</h4>
             </div>
             <form ng-submit="addClient()">
-                <div class="modal-body row">           
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="sr-only" for="new-client-name">Nombre</label>
-                            <input name="new-client-name" type="text" class="form-control" ng-model="newClient.Name" placeholder="Nombre del Cliente" />
+                <div class="modal-body row">
+                    <ul class="nav nav-pills sections" role="tablist">
+                        <li class="active" role="presentation">
+                            <a href="#general" aria-controls="general" role="tab" data-toggle="tab">
+                                Datos Generales
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">
+                                Contactos
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="general" role="tabpanel">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="new-client-name">Nombre</label>
+                                    <input name="new-client-name" type="text" class="form-control" ng-model="newClient.Name" placeholder="Nombre del Cliente" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="new-client_bill" class="control-label">Nombre Factura</label>
+                                    <input type="text" name="new-client-bill" class="form-control" ng-model="newClient.BillName" placeholder="Nombre Factura" >
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new-client-type" class="control-label">Tipo Cliente</label>
+                                    <select name="new-client-type" name="new-client-type" ng-model="newClient.ClientTypeId" class="form-control">
+                                        <option value="" disabled selected>***Tipo***</option>
+                                        <option ng-repeat="type in types" value="{{type.Id}}">{{type.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new-client-country" class="control-label">País</label>
+                                    <select name="new-client-country" name="new-client-country" ng-model="newClient.CountryId" class="form-control capitalize">
+                                        <option value="" disabled selected>***País***</option>
+                                        <option ng-repeat="country in countries | orderBy:'SpanishName'" value="{{country.Id}}">{{country.SpanishName}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new-client-industry" class="control-label">Industria</label>
+                                    <select name="new-client-industry" id="new-client-industry" ng-model="newClient.IndustryId" class="form-control">
+                                        <option value="" disabled selected>***Industria***</option>
+                                        <option value="{{industry.Id}}" ng-repeat="industry in industries">{{industry.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="new-client-attorney" class="control-label">Abogado</label>
+                                    <select name="new-client-attorney" id="new-client-attorney" ng-model="newClient.AttorneyId" class="form-control">
+                                        <option value="" disabled selected>***Abogado***</option>
+                                        <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys">{{attorney.Name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="new-client-email" class="control-label">Correo Electrónico</label>
+                                    <input type="email" name="new-client-email" placeholder="Email" class="form-control" ng-model="newClient.Email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="new-client-notes" class="control-label">Observaciones</label>
+                                    <textarea name="new-client-notes" rows="3" placeholder="Observaciones" class="form-control" ng-model="newClient.Notes"></textarea>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="new-client_bill" class="sr-only">Nombre Factura</label>
-                            <input type="text" name="new-client-bill" class="form-control" ng-model="newClient.BillName" placeholder="Nombre Factura" >
+                        <div class="tab-panel" id="contacts" role="tabpanel">
+
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="new-client-type" class="sr-only">Tipo Cliente</label>
-                            <select name="new-client-type" name="new-client-type" ng-model="newClient.ClienTypeId" class="form-control">
-                                <option value="" disabled selected>***Tipo***</option>
-                                <option ng-repeat="type in types" value="{{type.Id}}">{{type.Name}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="new-client-industry" class="sr-only">Industria</label>
-                            <select name="new-client-industry" id="new-client-industry" ng-model="newClient.IndustryId" class="form-control">
-                                <option value="" disabled selected>***Industria***</option>
-                                <option value="{{industry.Id}}" ng-repeat="industry in industries">{{industry.Name}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="new-client-attorney" class="sr-only">Abogado</label>
-                            <select name="new-client-attorney" id="new-client-attorney" ng-model="newClient.AttorneyId" class="form-control">
-                                <option value="" disabled selected>***Abogado***</option>
-                                <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys">{{attorney.Name}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="new-client-email" class="sr-only">Correo Electrónico</label>
-                            <input type="email" name="new-client-email" placeholder="Email" class="form-control" ng-model="newClient.Email">
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12">

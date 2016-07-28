@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5 {
 .nav-pills > li.active > a:focus {
     border-radius: 0;
     text-transform: uppercase;
-    background-color: #f3f3f4;
+    background-color: transparent;
     color: #495361;
     border-bottom: 5px solid #337ab7;
     opacity: 1;
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5 {
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-    background-color: #f3f3f4;
+    background-color: transparent;
 }
 a:focus {
     outline: 0;
@@ -89,15 +89,19 @@ a:focus {
 }
 
 .form-control {
-     border-style: solid;
-    border-width: 1px;
+    border-style: solid;
+    border-width: 2px;
     border-radius: 0;
     margin: 8px 0px;
     color: #000000;
     background-color: rgba(255, 255, 255, 0.4);
     border-color: rgba(0, 0, 0, 0.4);
+    padding: 4px 12px;
 }
 
+.control-label {
+    margin-bottom: 0;
+}
 
 .btn {
     border-style: solid;
@@ -261,4 +265,8 @@ a:focus {
         position: relative;
         margin-right: 0;
     }
+}
+
+.capitalize {
+    text-transform: capitalize;
 }

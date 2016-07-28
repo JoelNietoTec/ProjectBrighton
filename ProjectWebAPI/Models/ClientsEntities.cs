@@ -20,6 +20,7 @@ namespace ProjectWebAPI.Models
         public virtual DbSet<MatterType> MatterTypes { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<ClientContact> ClientContacts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,6 +28,12 @@ namespace ProjectWebAPI.Models
                 .HasMany(e => e.Matters)
                 .WithRequired(e => e.Client)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Client>()
+                .HasMany(e => e.ClientContacts)
+                .WithRequired(e => e.Client)
+                .HasForeignKey(e=>e.ClientId)
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<ClientType>();
 

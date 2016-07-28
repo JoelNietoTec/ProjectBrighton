@@ -12,6 +12,7 @@ namespace ProjectWebAPI.Models
         public Client()
         {
             Matters = new HashSet<Matter>();
+            ClientContacts = new HashSet<ClientContact>();
         }
 
         [Key]
@@ -29,6 +30,8 @@ namespace ProjectWebAPI.Models
         public int IndustryId { get; set; }
 
         public int AttorneyId { get; set; }
+
+        public string Email { get; set; }
 
         [Column(TypeName = "ntext")]
         public string Notes { get; set; }
@@ -51,5 +54,9 @@ namespace ProjectWebAPI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Matter> Matters { get; set; }
+
+        public virtual ICollection<ClientContact> ClientContacts { get; set; }
+
+
     }
 }
