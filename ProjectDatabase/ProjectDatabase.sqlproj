@@ -68,6 +68,7 @@
     <Build Include="Tables\MatterTypes.sql" />
     <Build Include="Tables\Positions.sql" />
     <Build Include="Tables\Countries.sql" />
+    <Build Include="Tables\ClientContacts.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ProjectDatabase.refactorlog" />

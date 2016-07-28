@@ -49,4 +49,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[CreateDatePositions]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="41830d2e-b0e1-42bb-bb1e-5cf256e94425" ChangeDateTime="07/28/2016 03:31:25">
+    <Property Name="ElementName" Value="[dbo].[ClientContacts].[PhoneNumber]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientContacts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OfficePhone" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f325e2c2-090a-45c9-9606-639063aebed1" ChangeDateTime="07/28/2016 03:36:58">
+    <Property Name="ElementName" Value="[dbo].[ClientContacts].[Status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientContacts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Emai" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="195a120d-b551-4d47-aa1b-e7e3c9271752" ChangeDateTime="07/28/2016 03:37:01">
+    <Property Name="ElementName" Value="[dbo].[ClientContacts].[Emai]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientContacts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Email" />
+  </Operation>
 </Operations>

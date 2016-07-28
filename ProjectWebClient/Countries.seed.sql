@@ -52,7 +52,7 @@ INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('congo', 'congo
 INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('congo, democratic republic of the', 'república democrática del congo', 'cg', '180')
 INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('cook islands', 'islas cook', 'ck', '184')
 INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('costa rica', 'costa rica', 'cr', '188')
-INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('cote d'ivoire', 'costa de marfil', 'ci', '384')
+INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('cote divoire', 'costa de marfil', 'ci', '384')
 INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('croatia', 'croacia', 'hr', '191')
 INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('cuba', 'cuba', 'cu', '192')
 INSERT INTO Countries (Name, SpanishName, ShortName, Id) VALUES ('cyprus', 'chipre', 'cy', '196')
