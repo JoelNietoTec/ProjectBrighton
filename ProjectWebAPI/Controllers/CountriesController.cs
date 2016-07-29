@@ -7,18 +7,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ProjectWebAPI.Models;
-using System.Web.Http.Cors;
 
 namespace ProjectWebAPI.Controllers
 {
     [EnableCors(origins: "http://localhost:28278, http://localhost:5000", headers: "*", methods: "*")]
+
     public class CountriesController : ApiController
     {
-        
-
-        private ClientsEntities db = new ClientsEntities();
+        private ProjectDBEntities db = new ProjectDBEntities();
 
         // GET: api/Countries
         public IQueryable<Country> GetCountries()
@@ -38,7 +37,7 @@ namespace ProjectWebAPI.Controllers
 
             return Ok(country);
         }
-
+        /*
         // PUT: api/Countries/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCountry(int id, Country country)
@@ -84,7 +83,22 @@ namespace ProjectWebAPI.Controllers
             }
 
             db.Countries.Add(country);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (CountryExists(country.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = country.Id }, country);
         }
@@ -118,5 +132,6 @@ namespace ProjectWebAPI.Controllers
         {
             return db.Countries.Count(e => e.Id == id) > 0;
         }
+        */
     }
 }

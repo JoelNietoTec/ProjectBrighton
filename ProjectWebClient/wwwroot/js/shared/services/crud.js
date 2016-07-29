@@ -2,10 +2,8 @@ var crudService = function ($http) {
     var crudFunctions = {};
 
     crudFunctions.getItems = function (apiURL) {
-        console.log(apiURL);
         var promise = $http.get(apiURL)
             .then(function (response) {
-                console.log(response);
                 return response.data;
             }, function (response) {
                 console.log(response);
@@ -25,7 +23,6 @@ var crudService = function ($http) {
                     }
                 })
                 .then(function (response) {
-                    console.log(response);
                     return response.data;
                 }, function (response) {
                     console.log(response);
@@ -46,7 +43,6 @@ var crudService = function ($http) {
                     }
                 })
                 .then(function (response) {
-                    console.log(response);
                     return response.data;
                 }, function (response) {
                     console.log(response);

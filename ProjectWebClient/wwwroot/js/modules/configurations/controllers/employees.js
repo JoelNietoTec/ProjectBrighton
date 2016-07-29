@@ -21,14 +21,15 @@ var employeesController = function ($scope, $http, crudService, formatService) {
 
     $scope.addEmployee = function () {
         var employee = $scope.newEmployee;
+        employee.StartDate = moment(employee.StartDate, "DD/MM/YYYY");
         crudService.addItem($scope.apiURL + "Employees", employee)
             .then(function (d) {
                 $scope.newEmployee = {};
                 position = $scope.positions.filter(function (p) { return p.Id == d.PositionId });
                 d.Position = position[0];
-                d = formatService.frmDates(d)
-                d.relCreateDate = moment().startOf('minute').fromNow();
+                d.CreateDate = Date.now();
                 $scope.items.push(d);
+                $scope.items = formatService.frmDates($scope.items);
                 formatService.toggleModal('#newEmployeeModal', 'hide');
             });
     };

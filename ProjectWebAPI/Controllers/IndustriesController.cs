@@ -7,16 +7,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ProjectWebAPI.Models;
-using System.Web.Http.Cors;
 
 namespace ProjectWebAPI.Controllers
 {
-    [EnableCors(origins: "http://localhost:28278, http://localhost:5000, http://localhost:59082", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:28278, http://localhost:5000", headers: "*", methods: "*")]
+
     public class IndustriesController : ApiController
     {
-        private ClientsEntities db = new ClientsEntities();
+        private ProjectDBEntities db = new ProjectDBEntities();
 
         // GET: api/Industries
         public IQueryable<Industry> GetIndustries()
@@ -50,7 +51,9 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest();
             }
-            industry.ModifyDate = DateTime.Now; //Se ajusta la fecha de modificación del elemento
+
+            industry.ModifyDate = DateTime.Now;
+
             db.Entry(industry).State = EntityState.Modified;
 
             try
@@ -80,7 +83,9 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-            industry.CreateDate = DateTime.Now; // Se ajusta la fecha de Creación del elemento
+
+            industry.CreateDate = DateTime.Now;
+
             db.Industries.Add(industry);
             db.SaveChanges();
 

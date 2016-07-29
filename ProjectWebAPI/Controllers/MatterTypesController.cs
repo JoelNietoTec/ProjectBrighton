@@ -7,16 +7,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ProjectWebAPI.Models;
-using System.Web.Http.Cors;
 
 namespace ProjectWebAPI.Controllers
 {
     [EnableCors(origins: "http://localhost:28278, http://localhost:5000", headers: "*", methods: "*")]
     public class MatterTypesController : ApiController
     {
-        private ClientsEntities db = new ClientsEntities();
+        private ProjectDBEntities db = new ProjectDBEntities();
 
         // GET: api/MatterTypes
         public IQueryable<MatterType> GetMatterTypes()
@@ -51,7 +51,7 @@ namespace ProjectWebAPI.Controllers
                 return BadRequest();
             }
 
-            matterType.ModifyDate = DateTime.Now; //Se ajusta la fecha de modificación del elemento
+            matterType.ModifyDate = DateTime.Now;
 
             db.Entry(matterType).State = EntityState.Modified;
 
@@ -83,7 +83,7 @@ namespace ProjectWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            matterType.CreateDate = DateTime.Now; // Se ajusta la fecha de creación del elemento
+            matterType.CreateDate = DateTime.Now;
 
             db.MatterTypes.Add(matterType);
             db.SaveChanges();

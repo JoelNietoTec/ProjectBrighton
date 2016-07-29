@@ -190,12 +190,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\ClientContactsController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ClientTypesController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
     <Compile Include="Controllers\MattersController.cs" />
     <Compile Include="Controllers\MatterTypesController.cs" />
@@ -203,16 +201,48 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\ClientContact.cs" />
-    <Compile Include="Models\ClientsEntities.cs" />
-    <Compile Include="Models\ClientType.cs" />
-    <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Industry.cs" />
-    <Compile Include="Models\Matter.cs" />
-    <Compile Include="Models\MatterType.cs" />
-    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientContact.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientType.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Industry.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Matter.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MatterType.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Position.cs">
+      <DependentUpon>ClientEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -251,8 +281,25 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\ClientEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClientEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ClientEntities.edmx.diagram">
+      <DependentUpon>ClientEntities.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Models\ClientEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClientEntities.edmx</DependentUpon>
+      <LastGenOutput>ClientEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ClientEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClientEntities.edmx</DependentUpon>
+      <LastGenOutput>ClientEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
@@ -282,7 +329,9 @@
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

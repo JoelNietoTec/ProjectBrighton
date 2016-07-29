@@ -1,25 +1,25 @@
 var clientsController = function ($scope, $q, $http, crudService, formatService) {
-    $scope.newClient = {};
+    var crud = crudService;
+    var format = formatService;
 
     $scope.getClients = function () {
         $scope.items = {};
-        crudService.getItems($scope.apiURL + "Clients")
+        crud.getItems($scope.apiURL + "Clients")
             .then(function (d) {
-                console.log(d);
-                $scope.items = d;
-                
+                d = format.frmDates(d);
+                $scope.items = d;         
             });
     };
 
     $scope.createClient = function () {
         $scope.newClient = {};
         $q.all([
-            crudService.getItems($scope.apiURL + "Industries").then(function (d) { $scope.industries = d; }),
-            crudService.getItems($scope.apiURL + "ClientTypes").then(function (d) { $scope.types = d; }),
-            crudService.getItems($scope.apiURL + "Employees").then(function (d) { $scope.attorneys = d; }),
-            crudService.getItems($scope.apiURL + "Countries").then(function (d) { $scope.countries = d; })
+            crud.getItems($scope.apiURL + "Industries").then(function (d) { $scope.industries = d; }),
+            crud.getItems($scope.apiURL + "ClientTypes").then(function (d) { $scope.types = d; }),
+            crud.getItems($scope.apiURL + "Employees").then(function (d) { $scope.attorneys = d; }),
+            crud.getItems($scope.apiURL + "Countries").then(function (d) { $scope.countries = d; })
         ]).then(
-            formatService.toggleModal('#newClientModal', 'show')
+            format.toggleModal('#newClientModal', 'show')
             );
     };
 
@@ -27,22 +27,22 @@ var clientsController = function ($scope, $q, $http, crudService, formatService)
         var client = $scope.newClient;
         client.Status = 1;
         //console.log(client);
-        crudService.addItem($scope.apiURL + "Clients", client)
+        crud.addItem($scope.apiURL + "Clients", client)
             .then(function (d) {
                 console.log(d);
                 country = $scope.countries.filter(function (c) { return c.Id == d.CountryId });
                 industry = $scope.industries.filter(function (i) { return i.Id == d.IndustryId });
-                attorney = $scope.attorneys.filter(function (a) { return a.Id == d.AttorneyId });
+                attorney = $scope.attorneys.filter(function (a) { return a.Id == d.EmployeeId });
                 type = $scope.types.filter(function (t) { return t.Id == d.ClientTypeId });
                 $scope.newClient = {};
                 d.Country = country[0];
                 d.Industry = industry[0];
                 d.Employee = attorney[0];
                 d.ClientType = type[0];
-                //d = formatService.frmDates(d)
-                d.relCreateDate = moment().startOf('minute').fromNow();
+                d.CreateDate = Date.now();
                 $scope.items.push(d);
-                formatService.toggleModal('#newClientModal', 'hide');
+                $scope.items = formatService.frmDates($scope.items);
+                format.toggleModal('#newClientModal', 'hide');
             });
     };
 

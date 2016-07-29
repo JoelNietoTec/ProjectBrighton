@@ -58,14 +58,14 @@
                                     <label for="new-client-industry" class="control-label">Industria</label>
                                     <select name="new-client-industry" id="new-client-industry" ng-model="newClient.IndustryId" class="form-control">
                                         <option value="" disabled selected>***Industria***</option>
-                                        <option value="{{industry.Id}}" ng-repeat="industry in industries">{{industry.Name}}</option>
+                                        <option value="{{industry.Id}}" ng-repeat="industry in industries | orderBy: 'Name'">{{industry.Name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="new-client-attorney" class="control-label">Abogado</label>
-                                    <select name="new-client-attorney" id="new-client-attorney" ng-model="newClient.AttorneyId" class="form-control">
+                                    <select name="new-client-attorney" id="new-client-attorney" ng-model="newClient.EmployeeId" class="form-control">
                                         <option value="" disabled selected>***Abogado***</option>
                                         <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys">{{attorney.Name}}</option>
                                     </select>

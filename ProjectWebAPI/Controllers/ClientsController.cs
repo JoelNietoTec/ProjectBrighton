@@ -7,16 +7,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ProjectWebAPI.Models;
-using System.Web.Http.Cors;
 
 namespace ProjectWebAPI.Controllers
 {
     [EnableCors(origins: "http://localhost:28278, http://localhost:5000", headers: "*", methods: "*")]
     public class ClientsController : ApiController
     {
-        private ClientsEntities db = new ClientsEntities();
+        private ProjectDBEntities db = new ProjectDBEntities();
 
         // GET: api/Clients
         public IQueryable<Client> GetClients()
@@ -50,7 +50,9 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest();
             }
-            client.ModifyDate = DateTime.Now; //Se ajusta la fecha de modificación del elemento
+
+            client.ModifyDate = DateTime.Now;
+
             db.Entry(client).State = EntityState.Modified;
 
             try
@@ -81,7 +83,8 @@ namespace ProjectWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            client.CreateDate = DateTime.Now; // Se ajusta la fecha de creación del elemento
+            client.CreateDate = DateTime.Now;
+
             db.Clients.Add(client);
             db.SaveChanges();
 
