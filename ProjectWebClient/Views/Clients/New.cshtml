@@ -8,7 +8,7 @@
                 <h4 class="modal-title" id="newLabel">Nuevo Elemento</h4>
             </div>
             <form ng-submit="addClient()">
-                <div class="modal-body row">
+                <div class="modal-body">
                     <ul class="nav nav-pills sections" role="tablist">
                         <li class="active" role="presentation">
                             <a href="#general" aria-controls="general" role="tab" data-toggle="tab">
@@ -22,7 +22,7 @@
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="active tab-pane" id="general" role="tabpanel">
+                        <div class="row active tab-pane" id="general" role="tabpanel">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label" for="new-client-name">Nombre</label>
@@ -84,8 +84,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-panel" id="contacts" role="tabpanel">
-
+                        <div class="tab-pane row" id="contacts" role="tabpanel">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new-contact-name" class="sr-only">Nombre</label>
+                                    <input type="text" class="form-control" name="new-contact-name" placeholder="Nombre">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new-contact-position" class="sr-only">Cargo</label>
+                                    <input type="text" class="form-control" name="new-contact-position" placeholder="Cargo">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new-contact-email" class="sr-only">Email</label>
+                                    <input type="email" class="form-control" name="new-contact-email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="new-contact-address" class="sr-only">Direccion</label>
+                                    <input type="text" class="form-control" name="new-contact-address" placeholder="Direccion">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="new-contact-mobile" class="sr-only">Celular</label>
+                                    <input type="text" class="form-control" name="new-contact-mobile" placeholder="Celular">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="new-contact-office" class="sr-only">Tel Oficina</label>
+                                    <input type="text" class="form-control" name="new-contact-office" placeholder="Tel. Oficina">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="new-contact-fax" class="sr-only">Fax</label>
+                                    <input type="text" class="form-control" name="new-contact-fax" placeholder="Fax">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-lg btn-primary btn-block">Agregar</button>
+                                </div>                       
+                            </div>
                         </div>
                     </div>                    
                 </div>

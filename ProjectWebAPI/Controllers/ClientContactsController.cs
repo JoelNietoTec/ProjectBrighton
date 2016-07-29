@@ -58,6 +58,7 @@ namespace ProjectWebAPI.Controllers
                 return BadRequest();
             }
 
+            clientContact.ModifyDate = DateTime.Now;
             db.Entry(clientContact).State = EntityState.Modified;
 
             try
@@ -87,7 +88,7 @@ namespace ProjectWebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            clientContact.CreateDate = DateTime.Now;
             db.ClientContacts.Add(clientContact);
             db.SaveChanges();
 

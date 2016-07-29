@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .tab-content > .active {
-    margin: 15px;
     padding: 15px;
     background-color: #fff;
 }
@@ -269,4 +268,9 @@ a:focus {
 
 .capitalize {
     text-transform: capitalize;
+}
+
+
+.datepicker table tr td {
+    border-radius: 15px;
 }
