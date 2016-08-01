@@ -24,7 +24,6 @@ var formatService = function () {
     };
 
     formatFunctions.frmDates = function (array) {
-        console.log(array);
         array.forEach(function (e) {
             //Formato de fechas legibles
             e.frmtCreateDate = formatFunctions.legibleDate(e.CreateDate);

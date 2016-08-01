@@ -3,16 +3,13 @@
   "private": true,
   "dependencies": {
     "bootstrap": "3.3.6",
-    "jquery": "latest",
+    "jquery": "2.2.4",
     "jquery-validation": "1.15.1",
     "jquery-validation-unobtrusive": "3.2.6",
     "angular": "1.5.8",
     "font-awesome": "4.6.3",
     "moment": "2.14.1",
-    "bootstrap-datepicker": "latest",
-    "datatables.net": "^1.10.12",
-    "datatables.net-bs": "^1.10.12",
-    "datatables.net-buttons": "^1.2.1",
-    "datatables.net-buttons-bs": "^1.2.1"
+    "bootstrap-datepicker": "1.6.1", 
+    "ng-table": "1.0.0"
   }
 }

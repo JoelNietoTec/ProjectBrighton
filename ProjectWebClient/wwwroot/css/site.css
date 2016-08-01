@@ -1,9 +1,9 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+﻿@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Titillium Web', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f3f4;
     font-size: 15px;
     }

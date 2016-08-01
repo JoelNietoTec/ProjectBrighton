@@ -1,5 +1,4 @@
-var clientsController = function ($scope, $q, $http, crudService, formatService) {
-    var crud = crudService;
+var clientsController = function ($scope, $q, $http, crud, formatService) {
     var format = formatService;
 
     $scope.getClients = function () {
@@ -7,7 +6,7 @@ var clientsController = function ($scope, $q, $http, crudService, formatService)
         crud.getItems($scope.apiURL + "Clients")
             .then(function (d) {
                 d = format.frmDates(d);
-                $scope.items = d;         
+                $scope.items = d;
             });
     };
 

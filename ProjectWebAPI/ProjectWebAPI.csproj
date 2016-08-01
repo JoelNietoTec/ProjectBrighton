@@ -194,6 +194,7 @@
     <Compile Include="Controllers\ClientTypesController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
     <Compile Include="Controllers\MattersController.cs" />
     <Compile Include="Controllers\MatterTypesController.cs" />
