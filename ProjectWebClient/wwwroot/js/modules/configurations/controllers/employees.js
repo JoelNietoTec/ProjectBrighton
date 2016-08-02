@@ -1,9 +1,13 @@
-var employeesController = function ($scope, $http, crudService, formatService) {
+var employeesController = function ($scope, $http, crudService, formatService, ngToast) {
 
     $scope.newEmployee = {};
 
     $scope.getEmployees = function () {
         $scope.items = {};
+        ngToast.create({
+            content: 'Message',
+            dismissOnTimeout: false
+        });
         crudService.getItems($scope.apiURL + "Employees")
             .then(function (d) {
                 d = formatService.frmDates(d);
@@ -68,4 +72,4 @@ var employeesController = function ($scope, $http, crudService, formatService) {
     $scope.getEmployees();
 };
 
-employeesController.$inject = ['$scope', '$http', 'crudService', 'formatService'];
+employeesController.$inject = ['$scope', '$http', 'crudService', 'formatService', 'ngToast'];

@@ -1,4 +1,4 @@
-var crudService = function ($http) {
+var crudService = function ($http, ngToast) {
     var crudFunctions = {};
 
     crudFunctions.getItems = function (apiURL) {
@@ -23,6 +23,11 @@ var crudService = function ($http) {
                     }
                 })
                 .then(function (response) {
+                    ngToast.create({
+                        className: 'success',
+                        content: '<span> Cambios guardados<i class="fa fa-check"></i></span>'
+                    });
+                    console.log('Toast');
                     return response.data;
                 }, function (response) {
                     console.log(response);
@@ -52,4 +57,4 @@ var crudService = function ($http) {
     return crudFunctions;
 }
 
-crudService.$inject = ['$http'];
+crudService.$inject = ['$http', 'ngToast'];

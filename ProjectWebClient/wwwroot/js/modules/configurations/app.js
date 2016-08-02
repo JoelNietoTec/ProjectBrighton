@@ -1,4 +1,4 @@
-var configApp = angular.module('configApp', ["sharedCode"]);
+var configApp = angular.module('configApp', ["sharedCode", "ngToast"]);
 
 configApp.run(function($rootScope){
     $rootScope.apiURL = "http://localhost:8080/api/";
