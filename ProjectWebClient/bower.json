@@ -10,6 +10,8 @@
     "font-awesome": "4.6.3",
     "moment": "2.14.1",
     "bootstrap-datepicker": "1.6.1", 
-    "ng-table": "1.0.0"
+    "ng-table": "1.0.0", 
+    "ngtoast": "2.0.0",
+    "angular-animate": "1.5.8"
   }
 }

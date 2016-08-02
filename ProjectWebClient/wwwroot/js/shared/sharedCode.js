@@ -1,4 +1,4 @@
-var shared = angular.module('sharedCode', []);
+var shared = angular.module('sharedCode', ['ngToast']);
 
 shared.factory('crudService', crudService);
 
