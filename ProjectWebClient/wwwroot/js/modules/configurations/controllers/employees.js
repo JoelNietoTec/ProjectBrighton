@@ -3,6 +3,7 @@ var employeesController = function ($scope, $http, crudService, formatService, n
     $scope.newEmployee = {};
 
     $scope.getEmployees = function () {
+        $scope.ready = false;
         $scope.items = {};
         ngToast.create({
             content: 'Message',
@@ -12,6 +13,7 @@ var employeesController = function ($scope, $http, crudService, formatService, n
             .then(function (d) {
                 d = formatService.frmDates(d);
                 $scope.items = d;
+                $scope.ready = true;
             });
     };
 

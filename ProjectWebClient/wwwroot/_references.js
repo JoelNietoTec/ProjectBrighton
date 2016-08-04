@@ -10,6 +10,7 @@
 /// <reference path="js/modules/legal/controllers/clients.js" />
 /// <reference path="js/shared/services/crud.js" />
 /// <reference path="js/shared/services/format.js" />
+/// <reference path="js/shared/directives/loading.js" />
 /// <reference path="js/shared/sharedCode.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/angular/angular.js" />

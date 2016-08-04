@@ -3,7 +3,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Ubuntu', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f3f4;
     font-weight: 300;
     font-size: 15px;
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5 {
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"]
-{s
+{
     width: 100%;
 }
 
@@ -278,4 +278,24 @@ a:focus {
 
 .datepicker table tr td {
     border-radius: 15px;
+}
+
+.loading-panel {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all;
+    opacity: 1;
+}
+
+.loading-panel.ng-hide {
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all;
+    opacity: 0;
+}
+
+.ng-hide {
+    opacity: 0;
 }
