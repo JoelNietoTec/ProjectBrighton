@@ -280,22 +280,13 @@ a:focus {
     border-radius: 15px;
 }
 
-.loading-panel {
-    width: 100%;
-    text-align: center;
-    font-size: 22px;
-    font-weight: normal;
-    transition: 1s ease all;
-    -webkit-transition: 1s ease all;
+.animated {
     opacity: 1;
+    transition: all 2s !important;
+    -webkit: all 2s;
 }
 
-.loading-panel.ng-hide {
-    transition: 1s ease all;
-    -webkit-transition: 1s ease all;
+.animated.ng-hide {
     opacity: 0;
-}
-
-.ng-hide {
-    opacity: 0;
+    display: block !important;
 }

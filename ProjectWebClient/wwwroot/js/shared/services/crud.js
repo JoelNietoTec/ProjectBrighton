@@ -12,7 +12,6 @@ var crudService = function ($http, ngToast) {
     };
 
     crudFunctions.addItem = function (apiURL, element) {
-        console.log(element);
         var promise =
             $http.post(
                 apiURL,
@@ -23,13 +22,10 @@ var crudService = function ($http, ngToast) {
                     }
                 })
                 .then(function (response) {
-                    ngToast.create({
-                        className: 'success',
-                        content: '<span> Cambios guardados<i class="fa fa-check"></i></span>'
-                    });
-                    console.log('Toast');
+                    crudFunctions.message('success', '<span> Elemento creado exitosamente! <i class="fa fa-check"></i></span>');
                     return response.data;
                 }, function (response) {
+                    crudFunctions.message('danger', '<span> El elemento no se pudo crear!  <i class="fa fa-times"></i></span>');
                     console.log(response);
                 });
         return promise;
@@ -48,12 +44,23 @@ var crudService = function ($http, ngToast) {
                     }
                 })
                 .then(function (response) {
+                    crudFunctions.message('success', '<span> Elemento modificado exitosamente! <i class="fa fa-check"></i></span>');
                     return response.data;
                 }, function (response) {
+                    crudFunctions.message('danger', '<span> El elemento no se pudo eliminar!  <i class="fa fa-times"></i></span>');
                     console.log(response);
                 });
         return promise;
     };
+
+    crudFunctions.message = function(type, content) {
+        ngToast.create({
+            className: type,
+            content: content,
+            dismissButton: true
+        });
+    };
+
     return crudFunctions;
 }
 
