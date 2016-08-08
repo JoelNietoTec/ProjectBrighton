@@ -1,10 +1,11 @@
-var shared = angular.module('sharedCode', ["ngToast", "ngAnimate", "ngTable"]);
+var shared = angular.module('sharedCode', ["ngToast", "ngAnimate"]);
 
 shared.config(['ngToastProvider', function (ngToast) {
     ngToast.configure({
         animation: 'slide',
         verticalPosition: 'bottom',
-        horizontalPosition: 'left'
+        horizontalPosition: 'left', 
+        timeout: 2000
     });
 }]);
 

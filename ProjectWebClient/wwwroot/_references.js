@@ -20,7 +20,6 @@
 /// <reference path="lib/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="lib/moment/moment.js" />
-/// <reference path="lib/ng-table/dist/ng-table.js" />
 /// <reference path="lib/ngtoast/dist/ngToast.min.js" />
 /// <reference path="lib/angular-sanitize/angular-sanitize.min.js" />
 /// <reference path="lib/angular-animate/angular-animate.min.js" />

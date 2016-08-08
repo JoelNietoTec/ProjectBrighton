@@ -290,3 +290,7 @@ a:focus {
     opacity: 0;
     display: block !important;
 }
+
+.alert {
+    border-radius: 0;
+}

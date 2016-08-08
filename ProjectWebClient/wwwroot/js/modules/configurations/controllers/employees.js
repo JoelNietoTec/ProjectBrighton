@@ -1,4 +1,4 @@
-var employeesController = function ($scope, $http, crudService, formatService, ngToast) {
+var employeesController = function ($scope, $http, crudService, formatService) {
     $scope.newEmployee = {};
 
     $scope.getEmployees = function () {
@@ -69,4 +69,4 @@ var employeesController = function ($scope, $http, crudService, formatService, n
     $scope.getEmployees();
 };
 
-employeesController.$inject = ['$scope', '$http', 'crudService', 'formatService', 'ngToast', 'NgTableParams'];
+employeesController.$inject = ['$scope', '$http', 'crudService', 'formatService'];

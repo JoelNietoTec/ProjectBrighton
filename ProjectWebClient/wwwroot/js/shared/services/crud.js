@@ -44,7 +44,7 @@ var crudService = function ($http, ngToast) {
                     }
                 })
                 .then(function (response) {
-                    crudFunctions.message('success', '<span> Elemento modificado exitosamente! <i class="fa fa-check"></i></span>');
+                    crudFunctions.message('success', '<span><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x "></i> <i class="fa fa-check fa-stack-1x fa-inverse"></i></span> Elemento modificado exitosamente! </span>');
                     return response.data;
                 }, function (response) {
                     crudFunctions.message('danger', '<span> El elemento no se pudo eliminar!  <i class="fa fa-times"></i></span>');
@@ -64,4 +64,4 @@ var crudService = function ($http, ngToast) {
     return crudFunctions;
 }
 
-crudService.$inject = ['$http', 'ngToast'];
+crudService.$inject = ['$http', 'ngToast']; 
