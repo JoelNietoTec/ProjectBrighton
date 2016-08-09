@@ -1,9 +1,9 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400);
+﻿@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700);
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Titillium Web', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f3f4;
     font-weight: 300;
     font-size: 15px;
@@ -294,3 +294,25 @@ a:focus {
 .alert {
     border-radius: 0;
 }
+
+.panel.card {
+    border-radius: 0;
+}
+
+.panel.card > .panel-heading {
+    border-radius: 0;
+}
+
+.panel.card > .panel-body > ul {
+    list-style: none;
+    font-weight: 400;
+}
+
+.text-muted {
+    color: #9da9b0;
+}
+
+.panel-footer {
+    font-weight: 700;
+}
+
