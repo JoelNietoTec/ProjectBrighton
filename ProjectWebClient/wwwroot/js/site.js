@@ -2,6 +2,7 @@
 $('.datepicker').datepicker({
     language: 'es',
     autoclose: true,
-    maxViewMode: 3, 
+    maxViewMode: 3,
+    startView: 2, 
     title: 'Fecha de Ingreso'
 });
