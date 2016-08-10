@@ -306,6 +306,7 @@ a:focus {
 .panel.card > .panel-body > ul {
     list-style: none;
     font-weight: 400;
+    -webkit-padding-start: 20px;
 }
 
 .text-muted {

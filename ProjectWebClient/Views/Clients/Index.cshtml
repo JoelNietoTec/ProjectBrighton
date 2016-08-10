@@ -8,7 +8,7 @@
         <div class="col-md-3" ng-repeat="item in items">
             <div class="panel panel-default card">
                 <div class="panel-body">
-                    <ul>
+                    <ul><li><i class="fa fa-hashtag text-muted fa-fw"></i> {{item.Id}}</li>
                         <li><i class="fa fa-bookmark-o text-muted fa-fw"></i> {{item.ClientType.Name}}</li>
                         <li><i class="fa fa-user text-muted fa-fw"></i> {{item.BillName}}</li>
                         <li class="capitalize"><i class="fa fa-globe text-muted fa-fw"></i> {{item.Country.SpanishName}}</li>
