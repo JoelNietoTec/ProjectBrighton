@@ -1,11 +1,11 @@
-<div class="modal fade" id="newClientModal" tabindex="-1" role="dialog" aria-labelledby="newLabel">
+<div class="modal fade" id="editClientModal" tabindex="-1" role="dialog" aria-labelledby="editLabel">
     <div class="modal-dialog modal-lg" role="form">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="newLabel">Nuevo Elemento</h4>
+                <h4 class="modal-title" id="editLabel">Nuevo Elemento</h4>
             </div>
             <form ng-submit="addClient()">
                 <div class="modal-body">
@@ -25,106 +25,106 @@
                         <div class="row active tab-pane" id="general" role="tabpanel">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="new-client-name">Nombre</label>
-                                    <input name="new-client-name" type="text" class="form-control" ng-model="newClient.Name" placeholder="Nombre del Cliente" ng-disabled="edit">
+                                    <label class="control-label" for="edit-client-name">Nombre</label>
+                                    <input name="edit-client-name" type="text" class="form-control" ng-model="editedClient.Name" placeholder="Nombre del Cliente" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="new-client_bill" class="control-label">Nombre Factura</label>
-                                    <input type="text" name="new-client-bill" class="form-control" ng-model="newClient.BillName" placeholder="Nombre Factura"  ng-disabled="edit">
+                                    <label for="edit-client_bill" class="control-label">Nombre Factura</label>
+                                    <input type="text" name="edit-client-bill" class="form-control" ng-model="editedClient.BillName" placeholder="Nombre Factura"  ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="new-client-type" class="control-label">Tipo Cliente</label>
-                                    <select name="new-client-type" name="new-client-type" ng-model="newClient.ClientTypeId" class="form-control">
+                                    <label for="edit-client-type" class="control-label">Tipo Cliente</label>
+                                    <select name="edit-client-type" name="edit-client-type" ng-model="editedClient.ClientTypeId" class="form-control" ng-disabled="edit">
                                         <option value="" disabled selected>***Tipo***</option>
-                                        <option ng-repeat="type in types" value="{{type.Id}}">{{type.Name}}</option>
+                                        <option ng-repeat="type in types" value="{{type.Id}}" ng-selected="editedClient.ClientTypeId">{{type.Name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="new-client-country" class="control-label">País</label>
-                                    <select name="new-client-country" name="new-client-country" ng-model="newClient.CountryId" class="form-control capitalize">
+                                    <label for="edit-client-country" class="control-label">País</label>
+                                    <select name="edit-client-country" name="edit-client-country" ng-model="editedClient.CountryId" class="form-control capitalize"  ng-disabled="edit">
                                         <option value="" disabled selected>***País***</option>
-                                        <option ng-repeat="country in countries | orderBy:'SpanishName'" value="{{country.Id}}">{{country.SpanishName}}</option>
+                                        <option ng-repeat="country in countries | orderBy:'SpanishName'" value="{{country.Id}}" ng-selected="editedClient.CountryId">{{country.SpanishName}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="new-client-industry" class="control-label">Industria</label>
-                                    <select name="new-client-industry" id="new-client-industry" ng-model="newClient.IndustryId" class="form-control">
+                                    <label for="edit-client-industry" class="control-label">Industria</label>
+                                    <select name="edit-client-industry" id="edit-client-industry" ng-model="editedClient.IndustryId" class="form-control"  ng-disabled="edit">
                                         <option value="" disabled selected>***Industria***</option>
-                                        <option value="{{industry.Id}}" ng-repeat="industry in industries | orderBy: 'Name'">{{industry.Name}}</option>
+                                        <option value="{{industry.Id}}" ng-repeat="industry in industries | orderBy: 'Name'" ng-selected="editedClient.IndustryId">{{industry.Name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="new-client-attorney" class="control-label">Abogado</label>
-                                    <select name="new-client-attorney" id="new-client-attorney" ng-model="newClient.EmployeeId" class="form-control">
+                                    <label for="edit-client-attorney" class="control-label">Abogado</label>
+                                    <select name="edit-client-attorney" id="edit-client-attorney" ng-model="editedClient.EmployeeId" class="form-control"  ng-disabled="edit">
                                         <option value="" disabled selected>***Abogado***</option>
-                                        <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys">{{attorney.Name}}</option>
+                                        <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys" ng-selected="editedClient.EmployeeId">{{attorney.Name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="new-client-email" class="control-label">Correo Electrónico</label>
-                                    <input type="email" name="new-client-email" placeholder="Email" class="form-control" ng-model="newClient.Email" ng-disabled="edit">
+                                    <label for="edit-client-email" class="control-label">Correo Electrónico</label>
+                                    <input type="email" name="edit-client-email" placeholder="Email" class="form-control" ng-model="editedClient.Email" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="new-client-notes" class="control-label">Observaciones</label>
-                                    <textarea name="new-client-notes" rows="3" placeholder="Observaciones" class="form-control" ng-model="newClient.Notes" ng-disabled="edit"></textarea>
+                                    <label for="edit-client-notes" class="control-label">Observaciones</label>
+                                    <textarea name="edit-client-notes" rows="3" placeholder="Observaciones" class="form-control" ng-model="editedClient.Notes" ng-disabled="edit"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane row" id="contacts" role="tabpanel">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="new-contact-name" class="sr-only">Nombre</label>
-                                    <input type="text" class="form-control" name="new-contact-name" placeholder="Nombre" ng-disabled="edit">
+                                    <label for="edit-contact-name" class="sr-only">Nombre</label>
+                                    <input type="text" class="form-control" name="edit-contact-name" placeholder="Nombre" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="new-contact-position" class="sr-only">Cargo</label>
-                                    <input type="text" class="form-control" name="new-contact-position" placeholder="Cargo" ng-disabled="edit">
+                                    <label for="edit-contact-position" class="sr-only">Cargo</label>
+                                    <input type="text" class="form-control" name="edit-contact-position" placeholder="Cargo" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="new-contact-email" class="sr-only">Email</label>
-                                    <input type="email" class="form-control" name="new-contact-email" placeholder="Email" ng-disabled="edit">
+                                    <label for="edit-contact-email" class="sr-only">Email</label>
+                                    <input type="email" class="form-control" name="edit-contact-email" placeholder="Email" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="new-contact-address" class="sr-only">Direccion</label>
-                                    <input type="text" class="form-control" name="new-contact-address" placeholder="Direccion" ng-disabled="edit">
+                                    <label for="edit-contact-address" class="sr-only">Direccion</label>
+                                    <input type="text" class="form-control" name="edit-contact-address" placeholder="Direccion" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="new-contact-mobile" class="sr-only">Celular</label>
-                                    <input type="text" class="form-control" name="new-contact-mobile" placeholder="Celular" ng-disabled="edit">
+                                    <label for="edit-contact-mobile" class="sr-only">Celular</label>
+                                    <input type="text" class="form-control" name="edit-contact-mobile" placeholder="Celular" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="new-contact-office" class="sr-only">Tel Oficina</label>
-                                    <input type="text" class="form-control" name="new-contact-office" placeholder="Tel. Oficina" ng-disabled="edit">
+                                    <label for="edit-contact-office" class="sr-only">Tel Oficina</label>
+                                    <input type="text" class="form-control" name="edit-contact-office" placeholder="Tel. Oficina" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="new-contact-fax" class="sr-only">Fax</label>
-                                    <input type="text" class="form-control" name="new-contact-fax" placeholder="Fax" ng-disabled="edit">
+                                    <label for="edit-contact-fax" class="sr-only">Fax</label>
+                                    <input type="text" class="form-control" name="edit-contact-fax" placeholder="Fax" ng-disabled="edit">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -137,7 +137,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12">
-                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Guardar"/ ng-disabled="edit">
+                        <input type="submit" class="btn btn-primary btn-lg" value="Guardar" ng-disabled="edit">
                     </div>
                 </div>
             </form>

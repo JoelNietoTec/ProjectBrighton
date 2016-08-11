@@ -1,5 +1,4 @@
-var clientsController = function ($scope, $q, $http, crud, formatService) {
-    var format = formatService;
+var clientsController = function ($scope, $q, $http, crud, format) {
 
     $scope.getClients = function () {
         $scope.items = {};
@@ -25,7 +24,6 @@ var clientsController = function ($scope, $q, $http, crud, formatService) {
     $scope.addClient = function () {
         var client = $scope.newClient;
         client.Status = 1;
-        //console.log(client);
         crud.addItem($scope.apiURL + "Clients", client)
             .then(function (d) {
                 console.log(d);
@@ -40,10 +38,30 @@ var clientsController = function ($scope, $q, $http, crud, formatService) {
                 d.ClientType = type[0];
                 d.CreateDate = Date.now();
                 $scope.items.push(d);
-                $scope.items = formatService.frmDates($scope.items);
+                $scope.items = format.frmDates($scope.items);
                 format.toggleModal('#newClientModal', 'hide');
             });
     };
+
+    $scope.editClient = function (item) {
+        $q.all([
+            crud.getItems($scope.apiURL + "Industries").then(function (d) { $scope.industries = d; }),
+            crud.getItems($scope.apiURL + "ClientTypes").then(function (d) { $scope.types = d; }),
+            crud.getItems($scope.apiURL + "Employees").then(function (d) { $scope.attorneys = d; }),
+            crud.getItems($scope.apiURL + "Countries").then(function (d) { $scope.countries = d; })
+        ]).then(
+            $scope.edit = true,
+            $scope.selectedItem = item,
+            $scope.editedClient = angular.copy($scope.selectedItem),
+            format.toggleModal('#editClientModal', 'show')
+            );
+    };
+
+    $scope.updateClient = function () {
+        if (angular.toJson($scope.editedClient) === angular.toJson($scope.selectedItem)) {
+            format.toggleModal('#editClientModal', 'hide');
+        }
+    }
 
     $scope.getClients();
 };

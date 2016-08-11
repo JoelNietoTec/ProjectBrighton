@@ -5,7 +5,7 @@
         Nuevo
     </button>
     <div class="card-container row">
-        <div class="col-md-3" ng-repeat="item in items">
+        <div class="col-md-2" ng-repeat="item in items">
             <div class="panel panel-default card">
                 <div class="panel-body">
                     <ul><li><i class="fa fa-hashtag text-muted fa-fw"></i> {{item.Id}}</li>
@@ -16,7 +16,7 @@
                         <li></li>
                         <li><i class="fa fa-briefcase text-muted fa-fw"></i> {{item.Employee.Name}}</li>
                         <br/>
-                        <li><a href="#" class="btn btn-primary">Ver más</a></li>
+                        <li><a href="#" ng-click="editClient(item)" class="btn btn-primary">Ver más</a></li>
                     </ul>
                 </div>
                 <div class="panel-footer">
@@ -26,4 +26,5 @@
         </div>
     </div>
     @Html.Partial("~/Views/Clients/New.cshtml")
+    @Html.Partial("~/Views/Clients/Edit.cshtml")
 </div>
