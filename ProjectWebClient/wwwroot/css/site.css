@@ -3,7 +3,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Titillium Web', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f3f4;
     font-weight: 300;
     font-size: 15px;
@@ -319,3 +319,10 @@ a:focus {
     font-weight: 700;
 }
 
+.fa-stack.edit-command > .fa-circle {
+    color: #0076A3;
+}
+
+.fa-stack.delete-command > .fa-circle {
+    color: #d9534f;
+}
