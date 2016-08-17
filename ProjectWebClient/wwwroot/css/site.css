@@ -173,7 +173,7 @@ a:focus {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #0076A3;
+    background: #003f57;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -217,10 +217,20 @@ a:focus {
     color: #fff;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav li a:hover, .sidebar-nav li a.active {
     text-decoration: none;
     background: rgba(255,255,255,0.2);
 }
+
+.sidebar-nav li a.active {
+    border-right: 5px solid #3E4149;
+    pointer-events: none;
+    cursor: default;
+    background: #FFF;
+    color: #0076A3;
+    font-weight: bold;
+}
+
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
@@ -231,7 +241,7 @@ a:focus {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
-    background-color: #006a92;
+    /*background-color: #006a92;*/
 }
 
 /*.sidebar-nav > .sidebar-brand a {

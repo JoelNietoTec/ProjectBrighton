@@ -11,6 +11,16 @@
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "bundle"
+        },
+        {
+            "taskName": "clean",
+            "args": [
+                "bundle", "clean"
+            ],
+            "suppressTaskName": true
         }
     ]
 }

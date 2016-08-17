@@ -48,10 +48,20 @@
                     </a>
                 </li>              
                 <li>
-                    <a asp-area="" asp-controller="Legal" asp-action="Index"><i class="fa fa-university"></i> Legal</a>
+                    @if (@ViewData["Page"] == "Legal")
+                    {
+                        <a href="#" class="active"><i class="fa fa-university"></i> Legal</a>
+                    } else {
+                        <a asp-area="" asp-controller="Legal" asp-action="Index"><i class="fa fa-university"></i> Legal</a>
+                    }     
                 </li>
                 <li>
-                    <a asp-area="" asp-controller="Configuration" asp-action="Index"><i class="fa fa-tasks"></i> Configuración</a>
+                    @if (@ViewData["Page"] == "Configuration")
+                    {
+                        <a href="#" class="active"><i class="fa fa-tasks"></i> Configuración</a>
+                    } else {
+                        <a asp-area="" asp-controller="Configuration" asp-action="Index"><i class="fa fa-tasks"></i> Configuración</a>
+                    }      
                 </li>
             </ul>
         </div>

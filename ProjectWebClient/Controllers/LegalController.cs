@@ -9,6 +9,8 @@ namespace ProjectWebClient.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            ViewData["Page"] = "Legal";
+
             return View();
         }
     }
