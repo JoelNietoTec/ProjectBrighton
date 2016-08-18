@@ -1,9 +1,9 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700);
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f3f3f4;
     font-weight: 300;
     font-size: 15px;
@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     background-color: transparent;
     color: #495361;
-    border-bottom: 5px solid #337ab7;
+    border-bottom: 5px solid #0076A3;
     opacity: 1;
 }
 
@@ -162,18 +162,18 @@ a:focus {
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
+    padding-left: 230px;
 }
 
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
+    left: 230px;
     width: 0;
     height: 100%;
-    margin-left: -250px;
+    margin-left: -230px;
     overflow-y: auto;
-    background: #003f57;
+    background: #0076A3;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -214,20 +214,21 @@ a:focus {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: #cecece;
 }
 
 .sidebar-nav li a:hover, .sidebar-nav li a.active {
     text-decoration: none;
-    background: rgba(255,255,255,0.2);
+    
+    color: #fff;
 }
 
 .sidebar-nav li a.active {
-    border-right: 5px solid #3E4149;
+    border-left: 5px solid #4c9fbe;
     pointer-events: none;
     cursor: default;
-    background: #FFF;
-    color: #0076A3;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
     font-weight: bold;
 }
 
@@ -241,13 +242,15 @@ a:focus {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
+    
     /*background-color: #006a92;*/
 }
 
-/*.sidebar-nav > .sidebar-brand a {
-    color: #999999;
+.sidebar-nav > .sidebar-brand a {
+    /*color: #0076A3;*/
+    font-weight: bold;
 }
-*/
+
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
     background: none;

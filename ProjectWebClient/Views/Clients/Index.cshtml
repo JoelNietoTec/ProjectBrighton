@@ -5,22 +5,20 @@
         Nuevo
     </button>
     <div class="card-container row">
-        <div class="col-md-2" ng-repeat="item in items">
-            <div class="panel panel-default card">
+        <div class="col-md-4 col-lg-2" ng-repeat="item in items">
+            <div class="panel panel-default card" ng-click="editClient(item)">
                 <div class="panel-body">
-                    <ul><li><i class="fa fa-hashtag text-muted fa-fw"></i> {{item.Id}}</li>
+                    <ul>
                         <li><i class="fa fa-bookmark-o text-muted fa-fw"></i> {{item.ClientType.Name}}</li>
                         <li><i class="fa fa-user text-muted fa-fw"></i> {{item.BillName}}</li>
                         <li class="capitalize"><i class="fa fa-globe text-muted fa-fw"></i> {{item.Country.SpanishName}}</li>
                         <li><i class="fa fa-envelope-o text-muted fa-fw"></i> {{item.Email}}</li>
                         <li></li>
                         <li><i class="fa fa-briefcase text-muted fa-fw"></i> {{item.Employee.Name}}</li>
-                        <br/>
-                        <li><a href="#" ng-click="editClient(item)" class="btn btn-primary">Ver más</a></li>
                     </ul>
                 </div>
                 <div class="panel-footer">
-                    {{item.Name}}
+                    <i class="fa fa-hashtag text-muted fa-fw"></i> {{item.Id}} - {{item.Name}}
                 </div>
             </div>     
         </div>

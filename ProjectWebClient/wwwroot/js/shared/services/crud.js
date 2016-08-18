@@ -11,6 +11,19 @@ var crudService = function ($http, ngToast) {
         return promise;
     };
 
+    crudFunctions.getItem = function (apiURL, id) {
+        if (apiURL.slice(-1) != "/")
+            apiURL = apiURL + "/";
+        var promise =
+            $http.get(apiURL + id)
+                .then(function (response) {
+                    return response.data;
+                }, function (response) {
+                    console.log(response);
+                });
+        return promise;
+    };
+
     crudFunctions.addItem = function (apiURL, element) {
         var promise =
             $http.post(
@@ -53,7 +66,7 @@ var crudService = function ($http, ngToast) {
         return promise;
     };
 
-    crudFunctions.message = function(type, content) {
+    crudFunctions.message = function (type, content) {
         ngToast.create({
             className: type,
             content: content,

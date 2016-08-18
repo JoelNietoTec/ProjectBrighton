@@ -5,7 +5,7 @@
 <div ng-controller="industriesController as industries">
     <table class="table table-hover table-condensed">
         <thead>
-            <th>#</th>
+            <th class="centered">#</th>
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Creado</th>
@@ -14,7 +14,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="item in items">             
-                <td>{{item.Id}}</td>
+                <td class="centered">{{item.Id}}</td>
                 <td>{{item.Name}}</td>
                 <td>{{item.Description}}</td>
                 <td>{{item.relCreateDate}}</td>
