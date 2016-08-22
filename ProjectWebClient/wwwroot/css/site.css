@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
     opacity: .8;
     font-size: 13px;
+    border-bottom: 3px solid transparent;
 }
 
 .nav-pills > li.active > a, 
@@ -76,7 +77,9 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     background-color: transparent;
     color: #495361;
-    border-bottom: 5px solid #0076A3;
+    border-bottom: solid #0076A3;
+    transition: border 500ms ease-out;
+    -webkit-transition: border 500ms ease-out; 
     opacity: 1;
 }
 
@@ -162,16 +165,16 @@ a:focus {
 }
 
 #wrapper.toggled {
-    padding-left: 230px;
+    padding-left: 160px;
 }
 
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 230px;
+    left: 160px;
     width: 0;
     height: 100%;
-    margin-left: -230px;
+    margin-left: -160px;
     overflow-y: auto;
     background: #0076A3;
     -webkit-transition: all 0.5s ease;
@@ -181,7 +184,7 @@ a:focus {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 251px;
 }
 
 #page-content-wrapper {
@@ -192,7 +195,7 @@ a:focus {
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -160px;
 }
 
 /* Sidebar Styles */
@@ -200,14 +203,14 @@ a:focus {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 160px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
+    text-indent: 10px;
     line-height: 40px;
 }
 
@@ -219,17 +222,15 @@ a:focus {
 
 .sidebar-nav li a:hover, .sidebar-nav li a.active {
     text-decoration: none;
-    
     color: #fff;
 }
 
 .sidebar-nav li a.active {
-    border-left: 5px solid #4c9fbe;
+    border-left: 3px solid #4c9fbe;
     pointer-events: none;
     cursor: default;
     background: rgba(255,255,255,0.1);
     color: #fff;
-    font-weight: bold;
 }
 
 
@@ -258,7 +259,7 @@ a:focus {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 160px;
     }
 
     #wrapper.toggled {
@@ -266,7 +267,7 @@ a:focus {
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 160px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
