@@ -41,13 +41,15 @@
     </div>
     <div id="wrapper">
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a asp-area="" asp-controller="Home" asp-action="Index">
-                        Project Brighton
-                    </a>
-                </li>              
+            <ul class="sidebar-nav"> 
                 <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <i class="fa fa-home"></i>
+                        Inicio
+                    </a>
+                </li>           
+                <li>
+                    
                     @if (@ViewData["Page"] == "Legal")
                     {
                         <a href="#" class="active"><i class="fa fa-university"></i> Legal</a>

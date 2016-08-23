@@ -25,6 +25,7 @@ var industriesController = function ($scope, $http, crudService, formatService) 
     $scope.editIndustry = function (item) {
         $scope.selectedItem = item;
         $scope.editedIndustry = angular.copy($scope.selectedItem);
+        formatService.toggleModal('#editIndustryModal', 'show');
     };
 
     $scope.updateIndustry = function () {

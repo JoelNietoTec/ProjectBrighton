@@ -6,3 +6,7 @@ $('.datepicker').datepicker({
     startView: 2, 
     title: 'Fecha de Ingreso'
 });
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});

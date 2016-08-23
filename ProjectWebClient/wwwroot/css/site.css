@@ -10,7 +10,7 @@ body {
     }
 
 .ng-toast {
-    margin-left: -270px;
+    margin-left: -190px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5 {
     border-radius: 0;
     text-transform: uppercase;
     color: #495361;
-    font-weight: 700;
+    font-weight: 400;
     opacity: .8;
     font-size: 13px;
     border-bottom: 3px solid transparent;
@@ -115,8 +115,10 @@ a:focus {
     margin: 0px;
     padding: 4px 8px;
     border-width: 0;
+    border-bottom-width: 5px;
+    font-weight: 300;
     background-clip: border-box;
-    border-radius: 0;
+    /*border-radius: 3px;*/
     touch-action: manipulation;
 }
 
@@ -212,6 +214,7 @@ a:focus {
 .sidebar-nav li {
     text-indent: 10px;
     line-height: 40px;
+    border-bottom: 1px solid #005272;
 }
 
 .sidebar-nav li a {
@@ -311,6 +314,7 @@ a:focus {
 
 .panel.card {
     border-radius: 0;
+    box-shadow: 1px 1px 0.5px #ababab;
 }
 
 .panel.card > .panel-heading {
@@ -339,4 +343,12 @@ a:focus {
 
 .fa-stack.delete-command > .fa-circle {
     color: #d9534f;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #e5f1f5;
+}
+
+table > tbody> tr > td.commands {
+    padding: 0;
 }
