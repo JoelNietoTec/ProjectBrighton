@@ -3,8 +3,8 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f3f4;
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eaeaea;
     font-weight: 300;
     font-size: 15px;
     }
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .config-container {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .tab-content > .active {
@@ -118,7 +118,7 @@ a:focus {
     border-bottom-width: 5px;
     font-weight: 300;
     background-clip: border-box;
-    /*border-radius: 3px;*/
+    border-radius: 0;
     touch-action: manipulation;
 }
 
@@ -138,7 +138,14 @@ a:focus {
 
 .btn-primary {
     background-color: #0076A3;
+    border-color: #005e82;
 }
+
+.btn-primary:hover {
+    background-color: #005e82;
+    border-color: #005272;
+}
+
 /*SideBar Code*/
 
 /*!
@@ -315,6 +322,7 @@ a:focus {
 .panel.card {
     border-radius: 0;
     box-shadow: 1px 1px 0.5px #ababab;
+    transition: all 0.3s ease-out;
 }
 
 .panel.card > .panel-heading {
@@ -322,6 +330,7 @@ a:focus {
 }
 
 .panel.card > .panel-body > ul {
+    transition: all 0.3s ease-out;
     list-style: none;
     font-weight: 400;
     -webkit-padding-start: 10px;
@@ -334,6 +343,7 @@ a:focus {
 }
 
 .panel-footer {
+    transition: all 0.5s ease-out;
     font-weight: 700;
 }
 
@@ -345,10 +355,15 @@ a:focus {
     color: #d9534f;
 }
 
-.table-hover > tbody > tr:hover {
-    background-color: #e5f1f5;
-}
-
 table > tbody> tr > td.commands {
     padding: 0;
+}
+
+.card:hover > .panel-footer {
+    transition: all 0.5s ease-out;
+    color: #0076A3;
+}
+.card:hover > .panel-body > ul {
+    transition: all 0.5s ease-out;
+    font-weight: 700;
 }
