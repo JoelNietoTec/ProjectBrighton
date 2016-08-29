@@ -40,7 +40,7 @@
                                     <label for="edit-client-type" class="control-label">Tipo Cliente</label>
                                     <select name="edit-client-type" name="edit-client-type" ng-model="editedClient.ClientTypeId" class="form-control" ng-disabled="edit">
                                         <option value="" disabled selected>***Tipo***</option>
-                                        <option ng-repeat="type in types" value="{{type.Id}}" ng-selected="editedClient.ClientTypeId">{{type.Name}}</option>
+                                        <option ng-repeat="type in types" value="{{type.Id}}" ng-selected="editedClient.ClientTypeId == type.Id">{{type.Name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -49,7 +49,8 @@
                                     <label for="edit-client-country" class="control-label">País</label>
                                     <select name="edit-client-country" name="edit-client-country" ng-model="editedClient.CountryId" class="form-control capitalize"  ng-disabled="edit">
                                         <option value="" disabled selected>***País***</option>
-                                        <option ng-repeat="country in countries | orderBy:'SpanishName'" value="{{country.Id}}" ng-selected="editedClient.CountryId">{{country.SpanishName}}</option>
+                                        {{editedClient.CountryId}}
+                                        <option ng-repeat="country in countries | orderBy:'SpanishName'" value="{{country.Id}}" ng-selected="editedClient.CountryId == country.Id">{{country.SpanishName}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -58,7 +59,7 @@
                                     <label for="edit-client-industry" class="control-label">Industria</label>
                                     <select name="edit-client-industry" id="edit-client-industry" ng-model="editedClient.IndustryId" class="form-control"  ng-disabled="edit">
                                         <option value="" disabled selected>***Industria***</option>
-                                        <option value="{{industry.Id}}" ng-repeat="industry in industries | orderBy: 'Name'" ng-selected="editedClient.IndustryId">{{industry.Name}}</option>
+                                        <option value="{{industry.Id}}" ng-repeat="industry in industries | orderBy: 'Name'" ng-selected="editedClient.IndustryId == industry.Id">{{industry.Name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -137,7 +138,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12">
-                        <input type="submit" class="btn btn-primary btn-lg" value="Guardar" ng-disabled="edit">
+                        <input type="submit" class="btn btn-primary" value="Guardar" ng-disabled="edit">
                     </div>
                 </div>
             </form>

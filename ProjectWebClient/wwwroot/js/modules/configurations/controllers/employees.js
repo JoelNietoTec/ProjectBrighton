@@ -1,10 +1,10 @@
-var employeesController = function ($scope, $http, crudService, formatService) {
+var employeesController = function ($scope, $http, crud, formatService) {
     $scope.newEmployee = {};
 
     $scope.getEmployees = function () {
         $scope.ready = false;
         $scope.items = {};
-        crudService.getItems($scope.apiURL + "Employees")
+        crud.getItems($scope.apiURL + "Employees")
             .then(function (d) {
                 d = formatService.frmDates(d);
                 $scope.items = d;
@@ -12,8 +12,12 @@ var employeesController = function ($scope, $http, crudService, formatService) {
             });
     };
 
+    $scope.initObjects = function() {
+        crud.getItems($scope.apiURL + "Positions").then(function (d) { $scope.positions = d; });
+    };
+
     $scope.createEmployee = function () {
-        crudService.getItems($scope.apiURL + "Positions")
+        crud.getItems($scope.apiURL + "Positions")
             .then(function (d) {
                 $scope.positions = d;
                 formatService.toggleModal('#newEmployeeModal', 'show');
@@ -23,7 +27,7 @@ var employeesController = function ($scope, $http, crudService, formatService) {
     $scope.addEmployee = function () {
         var employee = $scope.newEmployee;
         employee.StartDate = moment(employee.StartDate, "DD/MM/YYYY");
-        crudService.addItem($scope.apiURL + "Employees", employee)
+        crud.addItem($scope.apiURL + "Employees", employee)
             .then(function (d) {
                 $scope.newEmployee = {};
                 position = $scope.positions.filter(function (p) { return p.Id == d.PositionId });
@@ -38,6 +42,8 @@ var employeesController = function ($scope, $http, crudService, formatService) {
     $scope.editEmployee = function (item) {
         $scope.selectedItem = item;
         $scope.editedEmployee = angular.copy($scope.selectedItem);
+        $('#edit-employee-date').datepicker('update', moment(item.StartDate).format("DD/MM/YYYY"));
+        formatService.toggleModal('#editEmployeeModal', 'show');
     };
 
     $scope.updateEmployee = function () {
@@ -45,12 +51,12 @@ var employeesController = function ($scope, $http, crudService, formatService) {
             formatService.toggleModal('#editEmployeeModal', 'hide');
         } else {
             var employee = $scope.editedEmployee;
-            crudService.updateItem($scope.apiURL + "Employees", employee.Id, employee)
+            crud.updateItem($scope.apiURL + "Employees", employee.Id, employee)
                 .then(function (d) {
                     employee.frmtModifyDate = moment().startOf('minute').fromNow();
                     $scope.getEmployees();
                     formatService.toggleModal('#editEmployeeModal', 'hide');
-                });
+                });      
         }
     };
 

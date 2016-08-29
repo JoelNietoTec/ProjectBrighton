@@ -10,11 +10,7 @@
                 Empleados
             </a>
         </li>
-        <li role="presentation">
-            <a href="#clienttypes" aria-controls="clienttypes" role="tab" data-toggle="tab">
-                Tipos de Cliente
-            </a>
-        </li>
+        
         <li role="presentation">
             <a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">
                 Cargos
@@ -30,14 +26,16 @@
                 Tipos de Asunto
             </a>
         </li>
+        <li role="presentation">
+            <a href="#clienttypes" aria-controls="clienttypes" role="tab" data-toggle="tab">
+                Tipos de Cliente
+            </a>
+        </li>
     </ul>
     <div class="tab-content">
         <div class="active tab-pane" role="tabpanel" id="employees">
             @Html.Partial("~/Views/Employees/Index.cshtml")
-        </div>
-        <div class="tab-pane" role="tabpanel" id="clienttypes">
-            @Html.Partial("~/Views/ClientTypes/Index.cshtml")
-        </div>
+        </div>       
         <div class="tab-pane" role="tabpanel" id="positions">
             @Html.Partial("~/Views/Positions/Index.cshtml")
         </div>
@@ -46,6 +44,9 @@
         </div>     
         <div class="tab-pane" role="tabpanel" id="mattertypes">
             @Html.Partial("~/Views/MatterTypes/Index.cshtml")
+        </div>
+        <div class="tab-pane" role="tabpanel" id="clienttypes">
+            @Html.Partial("~/Views/ClientTypes/Index.cshtml")
         </div>
     </div>
 </div>

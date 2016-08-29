@@ -9,16 +9,18 @@ var clientsController = function ($scope, $q, $http, crud, format) {
             });
     };
 
-    $scope.createClient = function () {
-        $scope.newClient = {};
+    $scope.initObjects = function () {
         $q.all([
             crud.getItems($scope.apiURL + "Industries").then(function (d) { $scope.industries = d; }),
             crud.getItems($scope.apiURL + "ClientTypes").then(function (d) { $scope.types = d; }),
             crud.getItems($scope.apiURL + "Employees").then(function (d) { $scope.attorneys = d; }),
-            crud.getItems($scope.apiURL + "Countries").then(function (d) { $scope.countries = d; })
-        ]).then(
-            format.toggleModal('#newClientModal', 'show')
-            );
+            crud.getItems($scope.apiURL + "Countries").then(function (d) { $scope.countries = d; }),
+        ]);
+    };
+
+    $scope.createClient = function () {
+        $scope.newClient = {};
+        format.toggleModal('#newClientModal', 'show');
     };
 
     $scope.addClient = function () {
@@ -44,25 +46,21 @@ var clientsController = function ($scope, $q, $http, crud, format) {
     };
 
     $scope.editClient = function (item) {
-        $q.all([
-            crud.getItems($scope.apiURL + "Industries").then(function (d) { $scope.industries = d; }),
-            crud.getItems($scope.apiURL + "ClientTypes").then(function (d) { $scope.types = d; }),
-            crud.getItems($scope.apiURL + "Employees").then(function (d) { $scope.attorneys = d; }),
-            crud.getItems($scope.apiURL + "Countries").then(function (d) { $scope.countries = d; })
-        ]).then(
-            $scope.edit = true,
-            $scope.selectedItem = item,
-            $scope.editedClient = angular.copy($scope.selectedItem),
-            format.toggleModal('#editClientModal', 'show')
-            );
+
+        $scope.edit = true;
+        $scope.selectedItem = item;
+        $scope.editedClient = angular.copy($scope.selectedItem);
+        console.log($scope.editedClient.CountryId);
+        format.toggleModal('#editClientModal', 'show');
     };
 
     $scope.updateClient = function () {
         if (angular.toJson($scope.editedClient) === angular.toJson($scope.selectedItem)) {
             format.toggleModal('#editClientModal', 'hide');
-        }
-    }
+        };
+    };
 
+    $scope.initObjects();
     $scope.getClients();
 };
 

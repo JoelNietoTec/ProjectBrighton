@@ -1,9 +1,9 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700);
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Segoe UI Light', 'Fira Sans', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto Condensed', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #eaeaea;
     font-weight: 300;
     font-size: 15px;
@@ -302,7 +302,7 @@ a:focus {
 
 
 .datepicker table tr td {
-    border-radius: 15px;
+    border-radius: 0;
 }
 
 .animated {
@@ -346,6 +346,7 @@ a:focus {
 .panel-footer {
     transition: all 0.5s ease-out;
     font-weight: 700;
+    border-radius: 0;
 }
 
 .fa-stack.edit-command > .fa-circle {
@@ -360,11 +361,21 @@ table > tbody> tr > td.commands {
     padding: 0;
 }
 
+.card:hover {
+    border-color:  #0076A3;
+}
+
 .card:hover > .panel-footer {
     transition: all 0.5s ease-out;
+    background-color:  #0076A3;
+    color: #FFF;
+}
+
+.card:hover > .panel-body  .text-muted {
     color: #0076A3;
 }
+/*
 .card:hover > .panel-body > ul {
     transition: all 0.5s ease-out;
     font-weight: 700;
-}
+}*/

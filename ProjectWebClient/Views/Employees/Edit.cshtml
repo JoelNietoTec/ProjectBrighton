@@ -1,0 +1,48 @@
+<div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="editLabel">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="editLabel">Editar Elemento</h4>
+            </div>
+            <form ng-submit="updateEmployee()">
+                <div class="modal-body row">           
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="sr-only" for="edit-employee-name">Nombre</label>
+                            <input id="edit-employee-name" type="text" class="form-control" ng-model="editedEmployee.Name" placeholder="Nombre del empleado" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="edit-employee-position" class="sr-only">Cargo</label>
+                            <select name="edit-employee-position" id="edit-employee-position" ng-model="editedEmployee.PositionId" class="form-control">
+                                <option value="" disabled selected>***Elija un cargo***</option>
+                                <option ng-repeat="position in positions" value="{{position.Id}}">{{position.Name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="edit-employee-rate" class="sr-only">Tarifa</label>
+                            <input type="number" class="form-control" name="edit-employee-rate" ng-model="editedEmployee.HourRate" id="edit-employee-rate" placeholder="$ / hora">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="edit-employee-date" class="sr-only">Fecha de Ingreso</label>
+                            <input type="text" class="datepicker form-control" ng-model="editedEmployee.StartDate" id="edit-employee-date" name="edit-employee-date" placeholder="Fecha de ingreso">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Guardar"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

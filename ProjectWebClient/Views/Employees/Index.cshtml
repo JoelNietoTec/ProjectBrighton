@@ -4,27 +4,39 @@
         Nuevo
     </button>
     <loading-panel class="animated" ng-hide="ready"></loading-panel>
-    <table class="table table-striped table-condensed animated" ng-show="ready">
+    <table class="table table-hover table-condensed animated" ng-show="ready">
         <thead>
-            <th>#</th>
+            <th class="centered">#</th>
             <th>Nombre</th>
             <th>Cargo</th>
             <th>Tarifa</th>
             <th>Fecha de Ingreso</th>
             <th>Creado</th>
             <th>Modificado</th>
+            <th class="centered">Comandos</th>
         </thead>
         <tbody>
             <tr ng-repeat="item in items">
-                <td>{{item.Id}}</td>
+                <td class="centered">{{item.Id}}</td>
                 <td>{{item.Name}}</td>
                 <td>{{item.Position.Name}}</td>
                 <td>{{item.HourRate}}</td>
                 <td>{{item.frmtStartDate}}</td>
                 <td>{{item.relCreateDate}}</td>
                 <td>{{item.relModifyDate}}</td>
+                <td class="centered commands">
+                    <a href="#" ng-click="editEmployee(item)" data-toggle="tooltip" data-placement="top" title="Editar" class="fa-stack edit-command">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </a>
+                    <span class="fa-stack delete-command">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>
     @Html.Partial("~/Views/Employees/New.cshtml")
+    @Html.Partial("~/Views/Employees/Edit.cshtml")
 </div>
