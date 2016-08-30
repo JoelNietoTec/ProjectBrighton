@@ -11,18 +11,18 @@
                 <div class="modal-body">
                     <ul class="nav nav-pills sections" role="tablist">
                         <li class="active" role="presentation">
-                            <a href="#general" aria-controls="general" role="tab" data-toggle="tab">
+                            <a href="#new-general" aria-controls="general" role="tab" data-toggle="tab">
                                 Datos Generales
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">
+                            <a href="#new-contacts" aria-controls="contacts" role="tab" data-toggle="tab">
                                 Contactos
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="row active tab-pane" id="general" role="tabpanel">
+                        <div class="row active tab-pane" id="new-general" role="tabpanel">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label" for="new-client-name">Nombre</label>
@@ -84,47 +84,47 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane row" id="contacts" role="tabpanel">
+                        <div class="tab-pane row" id="new-contacts" role="tabpanel">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="new-contact-name" class="sr-only">Nombre</label>
-                                    <input type="text" class="form-control" name="new-contact-name" placeholder="Nombre">
+                                    <input type="text" class="form-control" name="new-contact-name" placeholder="Nombre" ng-model="newContact.Name">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="new-contact-position" class="sr-only">Cargo</label>
-                                    <input type="text" class="form-control" name="new-contact-position" placeholder="Cargo">
+                                    <input type="text" class="form-control" name="new-contact-position" placeholder="Cargo" ng-model="newContact.Position">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="new-contact-email" class="sr-only">Email</label>
-                                    <input type="email" class="form-control" name="new-contact-email" placeholder="Email">
+                                    <input type="email" class="form-control" name="new-contact-email" placeholder="Email" ng-model="newContact.Email">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="new-contact-address" class="sr-only">Direccion</label>
-                                    <input type="text" class="form-control" name="new-contact-address" placeholder="Direccion">
+                                    <input type="text" class="form-control" name="new-contact-address" placeholder="Direccion" ng-model="newContact.Address">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="new-contact-mobile" class="sr-only">Celular</label>
-                                    <input type="text" class="form-control" name="new-contact-mobile" placeholder="Celular">
+                                    <input type="text" class="form-control" name="new-contact-mobile" placeholder="Celular" ng-model="newContact.MobilePhone">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="new-contact-office" class="sr-only">Tel Oficina</label>
-                                    <input type="text" class="form-control" name="new-contact-office" placeholder="Tel. Oficina">
+                                    <input type="text" class="form-control" name="new-contact-office" placeholder="Tel. Oficina" ng-model="newContact.OfficePhone">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="new-contact-fax" class="sr-only">Fax</label>
-                                    <input type="text" class="form-control" name="new-contact-fax" placeholder="Fax">
+                                    <input type="text" class="form-control" name="new-contact-fax" placeholder="Fax" >
                                 </div>
                             </div>
                             <div class="col-md-3">

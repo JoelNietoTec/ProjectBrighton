@@ -12,16 +12,12 @@ var employeesController = function ($scope, $http, crud, formatService) {
             });
     };
 
-    $scope.initObjects = function() {
+    $scope.initObjects = function () {
         crud.getItems($scope.apiURL + "Positions").then(function (d) { $scope.positions = d; });
     };
 
     $scope.createEmployee = function () {
-        crud.getItems($scope.apiURL + "Positions")
-            .then(function (d) {
-                $scope.positions = d;
-                formatService.toggleModal('#newEmployeeModal', 'show');
-            });
+        formatService.toggleModal('#newEmployeeModal', 'show');
     };
 
     $scope.addEmployee = function () {
@@ -47,16 +43,18 @@ var employeesController = function ($scope, $http, crud, formatService) {
     };
 
     $scope.updateEmployee = function () {
+        $scope.editedEmployee.StartDate = moment($scope.editedEmployee.StartDate, "DD/MM/YYYY");
         if (angular.toJson($scope.editedEmployee) === angular.toJson($scope.selectedItem)) {
             formatService.toggleModal('#editEmployeeModal', 'hide');
         } else {
             var employee = $scope.editedEmployee;
+            console.log(employee);
             crud.updateItem($scope.apiURL + "Employees", employee.Id, employee)
                 .then(function (d) {
                     employee.frmtModifyDate = moment().startOf('minute').fromNow();
                     $scope.getEmployees();
                     formatService.toggleModal('#editEmployeeModal', 'hide');
-                });      
+                });
         }
     };
 
@@ -71,7 +69,7 @@ var employeesController = function ($scope, $http, crud, formatService) {
                 console.log(error);
             });
     };
-
+    $scope.initObjects();
     $scope.getEmployees();
 };
 

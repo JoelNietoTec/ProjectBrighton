@@ -33,6 +33,7 @@ var industriesController = function ($scope, $http, crudService, formatService) 
             formatService.toggleModal('#editIndustryModal', 'hide');
         } else {
             var industry = $scope.editedIndustry;
+            console.log(industry);
             crudService.updateItem($scope.apiURL + "Industries", industry.Id, industry)
                 .then(function (d) {
                     industry.frmtModifyDate = moment().startOf('minute').fromNow();

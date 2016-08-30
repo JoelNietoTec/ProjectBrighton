@@ -60,7 +60,7 @@ var crudService = function ($http, ngToast) {
                     crudFunctions.message('success', '<span><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x "></i> <i class="fa fa-check fa-stack-1x fa-inverse"></i></span> Elemento modificado exitosamente! </span>');
                     return response.data;
                 }, function (response) {
-                    crudFunctions.message('danger', '<span> El elemento no se pudo eliminar!  <i class="fa fa-times"></i></span>');
+                    crudFunctions.message('danger', '<span> El elemento no se pudo editar!  <i class="fa fa-times"></i></span>');
                     console.log(response);
                 });
         return promise;

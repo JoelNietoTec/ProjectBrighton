@@ -11,18 +11,18 @@
                 <div class="modal-body">
                     <ul class="nav nav-pills sections" role="tablist">
                         <li class="active" role="presentation">
-                            <a href="#general" aria-controls="general" role="tab" data-toggle="tab">
+                            <a href="#edit-general" aria-controls="general" role="tab" data-toggle="tab">
                                 Datos Generales
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">
+                            <a href="#edit-contacts" aria-controls="contacts" role="tab" data-toggle="tab">
                                 Contactos
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="row active tab-pane" id="general" role="tabpanel">
+                        <div class="row active tab-pane" id="edit-general" role="tabpanel">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label" for="edit-client-name">Nombre</label>
@@ -68,7 +68,7 @@
                                     <label for="edit-client-attorney" class="control-label">Abogado</label>
                                     <select name="edit-client-attorney" id="edit-client-attorney" ng-model="editedClient.EmployeeId" class="form-control"  ng-disabled="edit">
                                         <option value="" disabled selected>***Abogado***</option>
-                                        <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys" ng-selected="editedClient.EmployeeId">{{attorney.Name}}</option>
+                                        <option value="{{attorney.Id}}" ng-repeat="attorney in attorneys" ng-selected="editedClient.EmployeeId == attorney.Id">{{attorney.Name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane row" id="contacts" role="tabpanel">
+                        <div class="tab-pane row" id="edit-contacts" role="tabpanel">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="edit-contact-name" class="sr-only">Nombre</label>
