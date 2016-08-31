@@ -20,6 +20,8 @@ var clientsController = function ($scope, $q, $http, crud, format) {
 
     $scope.createClient = function () {
         $scope.newClient = {};
+        $scope.newClient.ClientContacts = [];
+        $scope.correlative = 1;
         format.toggleModal('#newClientModal', 'show');
     };
 
@@ -58,6 +60,15 @@ var clientsController = function ($scope, $q, $http, crud, format) {
         if (angular.toJson($scope.editedClient) === angular.toJson($scope.selectedItem)) {
             format.toggleModal('#editClientModal', 'hide');
         };
+    };
+
+
+    $scope.addContact = function () {
+        $scope.newContact.Correlative = $scope.correlative;
+        $scope.newClient.ClientContacts.push($scope.newContact);
+        $scope.newContact = {};
+        console.log($scope.newClient);
+        $scope.correlative = $scope.correlative + 1; 
     };
 
     $scope.initObjects();
