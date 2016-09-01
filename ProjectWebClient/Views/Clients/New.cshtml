@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane row" id="new-contacts" role="tabpanel">
+                        <div class="tab-pane row" id="new-contacts" role="tabpanel" ng-form="newContact">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="new-contact-name" class="sr-only">Nombre</label>
@@ -129,33 +129,35 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-lg btn-primary btn-block" ng-click="addContact()">Agregar</button>
+                                    <button type="button" class="btn btn-lg btn-primary" ng-click="addContact()">Agregar</button>
                                 </div>                       
                             </div>
-                            <table class="table table-responsive table-bordered col-sm-12">
-                            <thead>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Cargo</th>
-                                <th>Dirección</th>
-                                <th>Tel. Oficina</th>
-                                <th>Tel. Móvil</th>
-                                <th>Fax</th>
-                                <th>Email</th>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat = "item in newClient.ClientContacts">
-                                    <td>{{item.Correlative}}</td>
-                                    <td>{{item.Name}}</td>
-                                    <td>{{item.Position}}</td>
-                                    <td>{{item.Address}}</td>
-                                    <td>{{item.OfficePhone}}</td>
-                                    <td>{{item.MobilePhone}}</td>
-                                    <td>{{item.FaxNumber}}</td>
-                                    <td>{{item.Email}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <div class="col-sm-12">
+                                <table class="table table-responsive table-bordered">
+                                    <thead>
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>Cargo</th>
+                                        <th>Dirección</th>
+                                        <th>Tel. Oficina</th>
+                                        <th>Tel. Móvil</th>
+                                        <th>Fax</th>
+                                        <th>Email</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in newClient.ClientContacts">
+                                            <td>{{item.Correlative}}</td>
+                                            <td>{{item.Name}}</td>
+                                            <td>{{item.Position}}</td>
+                                            <td>{{item.Address}}</td>
+                                            <td>{{item.OfficePhone}}</td>
+                                            <td>{{item.MobilePhone}}</td>
+                                            <td>{{item.FaxNumber}}</td>
+                                            <td>{{item.Email}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>         
                         </div>                     
                     </div>                    
                 </div>

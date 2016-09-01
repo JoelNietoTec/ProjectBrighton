@@ -48,12 +48,17 @@ var clientsController = function ($scope, $q, $http, crud, format) {
     };
 
     $scope.editClient = function (item) {
-
         $scope.edit = true;
         $scope.selectedItem = item;
         $scope.editedClient = angular.copy($scope.selectedItem);
         console.log($scope.editedClient.CountryId);
         format.toggleModal('#editClientModal', 'show');
+    };
+
+    $scope.unlockClient = function () {
+        $scope.edit = false;
+        $scope.correlative = $scope.editedClient.ClientContacts.length + 1;
+        console.log($scope.correlative);
     };
 
     $scope.updateClient = function () {
@@ -62,13 +67,17 @@ var clientsController = function ($scope, $q, $http, crud, format) {
         };
     };
 
-
     $scope.addContact = function () {
         $scope.newContact.Correlative = $scope.correlative;
-        $scope.newClient.ClientContacts.push($scope.newContact);
+        console.log($scope.editedClient);
+        if (!$scope.editedClient) {         
+            $scope.newClient.ClientContacts.push($scope.newContact);
+        } else {
+            $scope.editedClient.ClientContacts.push($scope.newContact);
+        }
+        console.log()
         $scope.newContact = {};
-        console.log($scope.newClient);
-        $scope.correlative = $scope.correlative + 1; 
+        $scope.correlative = $scope.correlative + 1;
     };
 
     $scope.initObjects();

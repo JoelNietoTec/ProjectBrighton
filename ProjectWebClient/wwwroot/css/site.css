@@ -379,3 +379,7 @@ table > tbody> tr > td.commands {
     transition: all 0.5s ease-out;
     font-weight: 700;
 }*/
+
+.modal-lg {
+    width: 1100px;
+}
