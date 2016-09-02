@@ -7,7 +7,7 @@
                 </button>
                 <h4 class="modal-title" id="editLabel">Nuevo Elemento</h4>
             </div>
-            <form ng-submit="addClient()">
+            <form ng-submit="updateClient()">
                 <div class="modal-body">
                     <ul class="nav nav-pills sections" role="tablist">
                         <li class="active" role="presentation">
@@ -85,53 +85,56 @@
                             </div>
                         </div>
                         <div class="tab-pane row" id="edit-contacts" role="tabpanel">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="edit-contact-name" class="sr-only">Nombre</label>
-                                    <input type="text" class="form-control" name="edit-contact-name" placeholder="Nombre" ng-disabled="edit" ng-model="newContact.Name">
+                            <div ng-form="editContact" ng-hide="edit">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="edit-contact-name" class="sr-only">Nombre</label>
+                                        <input type="text" class="form-control" name="edit-contact-name" placeholder="Nombre" ng-disabled="edit" ng-model="newContact.Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="edit-contact-position" class="sr-only">Cargo</label>
+                                        <input type="text" class="form-control" name="edit-contact-position" placeholder="Cargo" ng-disabled="edit" ng-model="newContact.Position">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="edit-contact-email" class="sr-only">Email</label>
+                                        <input type="email" class="form-control" name="edit-contact-email" placeholder="Email" ng-disabled="edit" ng-model="newContact.Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="edit-contact-address" class="sr-only">Direccion</label>
+                                        <input type="text" class="form-control" name="edit-contact-address" placeholder="Direccion" ng-disabled="edit" ng-model="newContact.Address">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="edit-contact-mobile" class="sr-only">Celular</label>
+                                        <input type="text" class="form-control" name="edit-contact-mobile" placeholder="Celular" ng-disabled="edit" ng-model="newContact.MobilePhone">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="edit-contact-office" class="sr-only">Tel Oficina</label>
+                                        <input type="text" class="form-control" name="edit-contact-office" placeholder="Tel. Oficina" ng-disabled="edit" ng-model="newContact.OfficePhone">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="edit-contact-fax" class="sr-only">Fax</label>
+                                        <input type="text" class="form-control" name="edit-contact-fax" placeholder="Fax" ng-disabled="edit" ng-model="newContact.FaxNumber">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-lg btn-primary" ng-click="addContact()">Agregar</button>
+                                    </div>                       
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="edit-contact-position" class="sr-only">Cargo</label>
-                                    <input type="text" class="form-control" name="edit-contact-position" placeholder="Cargo" ng-disabled="edit" ng-model="newContact.Position">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="edit-contact-email" class="sr-only">Email</label>
-                                    <input type="email" class="form-control" name="edit-contact-email" placeholder="Email" ng-disabled="edit" ng-model="newContact.Email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="edit-contact-address" class="sr-only">Direccion</label>
-                                    <input type="text" class="form-control" name="edit-contact-address" placeholder="Direccion" ng-disabled="edit" ng-model="newContact.Address">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="edit-contact-mobile" class="sr-only">Celular</label>
-                                    <input type="text" class="form-control" name="edit-contact-mobile" placeholder="Celular" ng-disabled="edit" ng-model="newContact.MobilePhone">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="edit-contact-office" class="sr-only">Tel Oficina</label>
-                                    <input type="text" class="form-control" name="edit-contact-office" placeholder="Tel. Oficina" ng-disabled="edit" ng-model="newContact.OfficePhone">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="edit-contact-fax" class="sr-only">Fax</label>
-                                    <input type="text" class="form-control" name="edit-contact-fax" placeholder="Fax" ng-disabled="edit" ng-model="newContact.FaxNumber">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-lg btn-primary" ng-click="addContact()">Agregar</button>
-                                </div>                       
-                            </div>
+                            
                             <div class="col-sm-12">
                                 <table class="table table-responsive">
                                     <thead>

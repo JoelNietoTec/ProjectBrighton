@@ -18,8 +18,8 @@ var formatService = function () {
     formatFunctions.toObject = function (arr) {
         var rv = {};
         for (var i = 0; i < arr.length; ++i)
-        console.log(arr[0]);
-            if (arr[i] !== undefined) rv[arr[i].id] = arr[i].name;
+            console.log(arr[0]);
+        if (arr[i] !== undefined) rv[arr[i].id] = arr[i].name;
         return rv;
     };
 
@@ -41,6 +41,13 @@ var formatService = function () {
         $(document).ready(function () {
             $(id).modal(event);
         });
+    };
+
+    formatFunctions.cleanObject = function (item, properties) {
+        properties.forEach(function (e) {
+            delete item[e];
+        }, this);
+        return item;
     };
 
     return formatFunctions;

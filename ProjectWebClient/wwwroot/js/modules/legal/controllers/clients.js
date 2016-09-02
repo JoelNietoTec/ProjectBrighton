@@ -51,26 +51,37 @@ var clientsController = function ($scope, $q, $http, crud, format) {
         $scope.edit = true;
         $scope.selectedItem = item;
         $scope.editedClient = angular.copy($scope.selectedItem);
-        console.log($scope.editedClient.CountryId);
         format.toggleModal('#editClientModal', 'show');
     };
 
     $scope.unlockClient = function () {
         $scope.edit = false;
         $scope.correlative = $scope.editedClient.ClientContacts.length + 1;
-        console.log($scope.correlative);
     };
 
     $scope.updateClient = function () {
         if (angular.toJson($scope.editedClient) === angular.toJson($scope.selectedItem)) {
             format.toggleModal('#editClientModal', 'hide');
+        } else {
+            var client = $scope.editedClient;
+            client = format.cleanObject(client, ["Country", "Industry", "ClientType", "Employee"]);
+            console.log(client);
+            crud.updateItem($scope.apiURL + "Clients", client.Id, client)
+                .then(function (d) {
+                    format.toggleModal('#editClientModal', 'hide');
+                    $scope.editedClient = {};
+                    $scope.getClients();
+                });
         };
     };
 
     $scope.addContact = function () {
         $scope.newContact.Correlative = $scope.correlative;
+        if(!$scope.newContact.CLientId)
+            $scope.newContact.ClientId = $scope.editedClient.Id;
+
         console.log($scope.editedClient);
-        if (!$scope.editedClient) {         
+        if (!$scope.editedClient) {
             $scope.newClient.ClientContacts.push($scope.newContact);
         } else {
             $scope.editedClient.ClientContacts.push($scope.newContact);

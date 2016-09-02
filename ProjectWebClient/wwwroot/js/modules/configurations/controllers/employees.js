@@ -48,6 +48,7 @@ var employeesController = function ($scope, $http, crud, formatService) {
             formatService.toggleModal('#editEmployeeModal', 'hide');
         } else {
             var employee = $scope.editedEmployee;
+            employee = formatService.cleanObject(employee, ["Position"]);
             console.log(employee);
             crud.updateItem($scope.apiURL + "Employees", employee.Id, employee)
                 .then(function (d) {

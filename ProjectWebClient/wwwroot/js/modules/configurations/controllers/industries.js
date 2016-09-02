@@ -40,7 +40,7 @@ var industriesController = function ($scope, $http, crudService, formatService) 
                     $scope.getIndustries();
                     formatService.toggleModal('#editIndustryModal', 'hide');
                 });
-        }
+        };
     };
 
     $scope.removeIndustry = function (item) {
